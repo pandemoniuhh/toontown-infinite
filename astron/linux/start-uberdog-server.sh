@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# Changes to the current file directory
-scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
-cd "$scriptDir"
-
 cd ../..
 
 BASE_CHANNEL=${1:-$((-1))}

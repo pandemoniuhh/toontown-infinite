@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# Changes to the current file directory
-scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
-cd "$scriptDir"
-
 cd ../..
 
 DISTRICT_NUM=${1:-$((-1))}

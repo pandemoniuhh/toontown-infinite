@@ -22,10 +22,11 @@ START_UBERDOG_SERVER_FILE = "start-uberdog-server"
 START_AI_SERVER_FILE = "start-ai-server"
 
 if sys.platform == "linux" or sys.platform == "linux2" or sys.platform == "darwin":
-    START_ASTRON_CLUSTER_FILE += ".sh"
-    START_UBERDOG_SERVER_FILE += ".sh"
-    START_AI_SERVER_FILE += ".sh"
+    START_ASTRON_CLUSTER_FILE = "./" + START_ASTRON_CLUSTER_FILE + ".sh"
+    START_UBERDOG_SERVER_FILE = "./" + START_UBERDOG_SERVER_FILE + ".sh"
+    START_AI_SERVER_FILE = "./" + START_AI_SERVER_FILE + ".sh"
     SERVER_PLATFORM = "linux"
+
 elif sys.platform == "win32":
     START_ASTRON_CLUSTER_FILE += ".bat"
     START_UBERDOG_SERVER_FILE += ".bat"
@@ -43,21 +44,20 @@ def launch_without_console(command, args):
                             stderr=subprocess.PIPE, stdout=subprocess.PIPE)
 
 def start_astron():
-    process = launch_without_console("astron/" + SERVER_PLATFORM + "/" + START_ASTRON_CLUSTER_FILE, [])
+    process = launch_without_console(START_ASTRON_CLUSTER_FILE, [])
     return process
 
 def start_uberdog(channel):
-    process = launch_without_console("astron/" + SERVER_PLATFORM + "/" + START_UBERDOG_SERVER_FILE, [str(channel)])
+    process = launch_without_console(START_UBERDOG_SERVER_FILE, [str(channel)])
     return process
 
 
 def start_ai_server(number):
-    process = launch_without_console("astron/" + SERVER_PLATFORM + "/" + START_AI_SERVER_FILE, [str(number)])
+    process = launch_without_console(START_AI_SERVER_FILE, [str(number)])
     return process
 
 
 def enqueue_output(out, queue, prefix, process):
-    buildString = ""
     for line in iter(out.readline, b''):
         if line != '':
             queue.append((prefix + line.decode('utf-8')).strip())
@@ -76,6 +76,7 @@ def shutdown_handler():
     sys.exit()
 
 if __name__ == "__main__":
+    os.chdir("astron/" + SERVER_PLATFORM + "/")
     processes = []
     q = []
     threads = []
