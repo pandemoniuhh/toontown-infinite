@@ -1,5 +1,6 @@
 #!/bin/sh
-cd ../..
+
+DISTRICT_NUM=${1:-$((-1))}
 
 # Define some constants for our AI server:
 MAX_CHANNELS=999999
@@ -7,11 +8,17 @@ STATESERVER=4002
 ASTRON_IP="127.0.0.1:7100"
 EVENTLOGGER_IP="127.0.0.1:7198"
 
-# Get the user input:
-read -p "District name (DEFAULT: Nuttyboro): " DISTRICT_NAME
-DISTRICT_NAME=${DISTRICT_NAME:-Nuttyboro}
-read -p "Base channel (DEFAULT: 401000000): " BASE_CHANNEL
-BASE_CHANNEL=${BASE_CHANNEL:-401000000}
+# Get the user input if we were not set a channel
+if [ "$DISTRICT_NUM" -eq "-1" ];
+ then
+    read -p "District name (DEFAULT: Nuttyboro): " DISTRICT_NAME
+    DISTRICT_NAME=${DISTRICT_NAME:-Nuttyboro}
+    read -p "Base channel (DEFAULT: 401000000): " BASE_CHANNEL
+    BASE_CHANNEL=${BASE_CHANNEL:-401000000}
+else
+    DISTRICT_NAME="District $DISTRICT_NUM"
+    BASE_CHANNEL=$((400000000 + 1000000 * $DISTRICT_NUM))
+fi
 
 echo "==============================="
 echo "Starting Toontown Infinite AI server..."
@@ -25,8 +32,8 @@ echo "==============================="
 
 while [ true ]
 do
-    /usr/bin/python2 -m toontown.ai.ServiceStart --base-channel $BASE_CHANNEL \
+    python -m toontown.ai.ServiceStart --base-channel $BASE_CHANNEL \
                      --max-channels $MAX_CHANNELS --stateserver $STATESERVER \
                      --astron-ip $ASTRON_IP --eventlogger-ip $EVENTLOGGER_IP \
-                     --district-name $DISTRICT_NAME
+                     --district-name "$DISTRICT_NAME"
 done
