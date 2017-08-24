@@ -1,4 +1,5 @@
 #!/bin/sh
+
 cd ..
 
 # Get the user input:
@@ -10,10 +11,14 @@ export ttiPassword="password"
 export TTI_PLAYCOOKIE=$ttiUsername
 export TTI_GAMESERVER="127.0.0.1"
 
-echo "==============================="
-echo "Starting Toontown Infinite..."
-echo "Username: $ttiUsername"
-echo "Gameserver: $TTI_GAMESERVER"
-echo "==============================="
+echo ===============================
+echo Starting Toontown Infinite...
+echo Username: $ttiUsername
+echo Gameserver: $TTI_GAMESERVER
+echo ===============================
 
-/usr/bin/python2 -m toontown.toonbase.ClientStart
+while [ true ]
+do
+    /usr/bin/python2 -m toontown.toonbase.ClientStart
+    read -r -p "Press any key to continue..." key
+done
