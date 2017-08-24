@@ -1,5 +1,6 @@
 #!/bin/sh
-cd ../..
+
+BASE_CHANNEL=${1:-$((-1))}
 
 # Define some constants for our AI server:
 MAX_CHANNELS=999999
@@ -7,9 +8,12 @@ STATESERVER=4002
 ASTRON_IP="127.0.0.1:7100"
 EVENTLOGGER_IP="127.0.0.1:7198"
 
-# Get the user input:
-read -p "Base channel (DEFAULT: 1000000): " BASE_CHANNEL
-BASE_CHANNEL=${BASE_CHANNEL:-1000000}
+# Get the user input if we were not set a channel:
+if [ "$BASE_CHANNEL" -eq "-1" ];
+ then
+    read -p "Base channel (DEFAULT: 1000000): " BASE_CHANNEL
+    BASE_CHANNEL=${BASE_CHANNEL:-1000000}
+fi
 
 echo "==============================="
 echo "Starting Toontown Infinite UberDOG server..."
@@ -22,7 +26,7 @@ echo "==============================="
 
 while [ true ]
 do
-/usr/bin/python2 -m toontown.uberdog.ServiceStart --base-channel $BASE_CHANNEL \
-                 --max-channels $MAX_CHANNELS --stateserver $STATESERVER \
-                 --astron-ip $ASTRON_IP --eventlogger-ip $EVENTLOGGER_IP
+    /usr/bin/python2 -m toontown.uberdog.ServiceStart --base-channel $BASE_CHANNEL \
+                     --max-channels $MAX_CHANNELS --stateserver $STATESERVER \
+                     --astron-ip $ASTRON_IP --eventlogger-ip $EVENTLOGGER_IP
 done

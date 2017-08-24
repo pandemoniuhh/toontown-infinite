@@ -32,7 +32,7 @@ echo "==============================="
 
 while [ true ]
 do
-    python -m toontown.ai.ServiceStart --base-channel $BASE_CHANNEL \
+    /usr/bin/python2 -m toontown.ai.ServiceStart --base-channel $BASE_CHANNEL \
                      --max-channels $MAX_CHANNELS --stateserver $STATESERVER \
                      --astron-ip $ASTRON_IP --eventlogger-ip $EVENTLOGGER_IP \
                      --district-name "$DISTRICT_NAME"
