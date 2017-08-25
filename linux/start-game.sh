@@ -1,5 +1,7 @@
 #!/bin/sh
-cd ..
+
+SRC_DIR="$(dirname "$(dirname "$(readlink -fm "$0")")")"
+cd $SRC_DIR
 
 # Get the user input:
 read -p "Username: " ttiUsername
