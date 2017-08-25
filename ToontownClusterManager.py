@@ -11,6 +11,8 @@ try:
 except ImportError:
     from queue import Queue, Empty # for Python 3.x
 
+SRC_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 NUM_SERVERS = 4
 
 SERVER_PLATFORM = ""
@@ -76,7 +78,8 @@ def shutdown_handler():
     sys.exit()
 
 if __name__ == "__main__":
-    os.chdir("astron/" + SERVER_PLATFORM + "/")
+    os.chdir(os.path.join(SRC_ROOT, "astron/" + SERVER_PLATFORM + "/"))
+
     processes = []
     q = []
     threads = []

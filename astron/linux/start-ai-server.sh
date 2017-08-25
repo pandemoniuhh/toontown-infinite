@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd ../..
+ASTRON_DIR="$(dirname "$(dirname "$(readlink -fm "$0")")")"
+cd $ASTRON_DIR/..
 
 DISTRICT_NUM=${1:-$((-1))}
 
