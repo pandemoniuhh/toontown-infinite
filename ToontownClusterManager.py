@@ -23,13 +23,13 @@ START_ASTRON_CLUSTER_FILE = "start-astron-cluster"
 START_UBERDOG_SERVER_FILE = "start-uberdog-server"
 START_AI_SERVER_FILE = "start-ai-server"
 
-if sys.platform == "linux" or sys.platform == "linux2" or sys.platform == "darwin":
+if sys.platform.startswith("linux") or sys.platform.startswith("darwin"):
     START_ASTRON_CLUSTER_FILE = "./" + START_ASTRON_CLUSTER_FILE + ".sh"
     START_UBERDOG_SERVER_FILE = "./" + START_UBERDOG_SERVER_FILE + ".sh"
     START_AI_SERVER_FILE = "./" + START_AI_SERVER_FILE + ".sh"
     SERVER_PLATFORM = "linux"
 
-elif sys.platform == "win32":
+elif sys.platform.startswith("win"):
     START_ASTRON_CLUSTER_FILE += ".bat"
     START_UBERDOG_SERVER_FILE += ".bat"
     START_AI_SERVER_FILE += ".bat"
