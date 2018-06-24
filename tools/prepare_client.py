@@ -31,6 +31,15 @@ parser.add_argument('modules', nargs='*', default=['otp', 'toontown'],
                     help='The Toontown Infinite modules to be included in the build.')
 args = parser.parse_args()
 
+if not args.vfs:
+    args.vfs = []
+
+if not args.include:
+    args.include = []
+
+if not args.exclude:
+    args.exclude = []
+
 print 'Preparing the client...'
 
 # Create a clean directory to store the build files in:
@@ -132,7 +141,7 @@ with open(configFilePath) as f:
 
 # Next, we need the DC file:
 dcData = ''
-filepath = os.path.join(args.src_dir, 'astron/dclass')
+filepath = os.path.join(args.src_dir, 'dclass')
 for filename in os.listdir(filepath):
     if filename.endswith('.dc'):
         fullpath = str(Filename.fromOsSpecific(os.path.join(filepath, filename)))

@@ -61,13 +61,9 @@ class ToonBase(OTPBase.OTPBase):
         elif sys.platform == 'darwin':
             self.nativeWidth = 800
             self.nativeHeight = 600
-        else:  # Use pyautogui.
-            try:
-                import pyautogui
-                self.nativeWidth,self.nativeHeight = pyautogui.size()
-            except ImportError:
-                self.nativeWidth = 800
-                self.nativeHeight = 600
+        else: 
+            self.nativeWidth = 800
+            self.nativeHeight = 600
 
         self.nativeRatio = round(
             float(self.nativeWidth) / float(self.nativeHeight), 2)
