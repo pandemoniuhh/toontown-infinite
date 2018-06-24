@@ -5,10 +5,12 @@ import os
 
 class BattleSounds:
     notify = DirectNotifyGlobal.directNotify.newCategory('BattleSounds')
+    DevResourcesDir = config.GetString('model-path', 'resources')
 
     def __init__(self):
         self.mgr = AudioManager.createAudioManager()
         self.isValid = 0
+
         if self.mgr != None and self.mgr.isValid():
             self.isValid = 1
             limit = base.config.GetInt('battle-sound-cache-size', 15)
@@ -19,10 +21,10 @@ class BattleSounds:
 
     def setupSearchPath(self):
         self.sfxSearchPath = DSearchPath()
-        self.sfxSearchPath.appendDirectory(Filename('../resources/phase_3/audio/sfx'))
-        self.sfxSearchPath.appendDirectory(Filename('../resources/phase_3.5/audio/sfx'))
-        self.sfxSearchPath.appendDirectory(Filename('../resources/phase_4/audio/sfx'))
-        self.sfxSearchPath.appendDirectory(Filename('../resources/phase_5/audio/sfx'))
+        self.sfxSearchPath.appendDirectory(Filename(os.path.join(self.DevResourcesDir, 'phase_3/audio/sfx')))
+        self.sfxSearchPath.appendDirectory(Filename(os.path.join(self.DevResourcesDir, 'phase_3.5/audio/sfx')))
+        self.sfxSearchPath.appendDirectory(Filename(os.path.join(self.DevResourcesDir, 'phase_4/audio/sfx')))
+        self.sfxSearchPath.appendDirectory(Filename(os.path.join(self.DevResourcesDir, 'phase_5/audio/sfx')))
         self.sfxSearchPath.appendDirectory(Filename('/phase_3/audio/sfx'))
         self.sfxSearchPath.appendDirectory(Filename('/phase_3.5/audio/sfx'))
         self.sfxSearchPath.appendDirectory(Filename('/phase_4/audio/sfx'))

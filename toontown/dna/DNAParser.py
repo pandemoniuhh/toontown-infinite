@@ -6,6 +6,9 @@ from DNASuitPoint import DNASuitPoint
 from DNAGroup import DNAGroup
 from DNAVisGroup import DNAVisGroup
 from DNADoor import DNADoor
+from os import path
+
+DevResourcesDir = config.GetString("model-path", "resources")
 
 class DNABulkLoader:
     def __init__(self, storage, files):
@@ -22,7 +25,7 @@ class DNABulkLoader:
 def loadDNABulk(dnaStorage, file):
     dnaLoader = DNALoader.DNALoader()
     if __debug__:
-        file = '../resources/' + file
+        file = path.join(DevResourcesDir, file)
     else:
         file = '/' + file
     dnaLoader.loadDNAFile(dnaStorage, file)
@@ -32,7 +35,7 @@ def loadDNAFile(dnaStorage, file):
     print 'Reading DNA file...', file
     dnaLoader = DNALoader.DNALoader()
     if __debug__:
-        file = '../resources/' + file
+        file = path.join(DevResourcesDir, file)
     else:
         file = '/' + file
     node = dnaLoader.loadDNAFile(dnaStorage, file)
@@ -44,7 +47,7 @@ def loadDNAFile(dnaStorage, file):
 def loadDNAFileAI(dnaStorage, file):
     dnaLoader = DNALoader.DNALoader()
     if __debug__:
-        file = '../resources/' + file
+        file = path.join(DevResourcesDir, file)
     else:
         file = '/' + file
     data = dnaLoader.loadDNAFileAI(dnaStorage, file)

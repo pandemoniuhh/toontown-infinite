@@ -14,6 +14,8 @@ class TTWhiteList(WhiteList, DistributedObject.DistributedObject):
     WhitelistOverHttp = config.GetBool('whitelist-over-http', False)
     WhitelistFileName = config.GetString('whitelist-filename', 'twhitelist.dat')
 
+    DevResourcesDir = config.GetString("model-path", "resources")
+
     def __init__(self):
         self.redownloadingWhitelist = False
         self.startRedownload = datetime.datetime.now()
@@ -25,7 +27,7 @@ class TTWhiteList(WhiteList, DistributedObject.DistributedObject):
         searchPath = DSearchPath()
         searchPath.appendDirectory(Filename('/phase_4/etc'))
         if __debug__:
-            searchPath.appendDirectory(Filename('../resources/phase_4/etc'))
+            searchPath.appendDirectory(Filename(os.path.join(self.DevResourcesDir, 'phase_4/etc')))
         found = vfs.resolveFilename(filename, searchPath)
         if not found:
             self.notify.info("Couldn't find whitelist data file!")

@@ -12,6 +12,8 @@ class PetNameGenerator:
     girlFirsts = []
     neutralFirsts = []
 
+    DevResourcesDir = config.GetString('model-path', 'resources')
+
     def __init__(self):
         self.generateLists()
 
@@ -31,9 +33,9 @@ class PetNameGenerator:
                 searchPath.appendDirectory(Filename.fromOsSpecific(os.path.expandvars('toontown/src/configfiles')))
             searchPath.appendDirectory(Filename('.'))
         if __debug__:
-            filename = '../resources/phase_3/etc/'+TTLocalizer.PetNameMaster
+            filename = os.path.join(self.DevResourcesDir, 'phase_3/etc/', TTLocalizer.PetNameMaster)
         else:
-            filename = '/phase_3/etc/'+TTLocalizer.PetNameMaster
+            filename = os.path.join('/phase_3/etc/', TTLocalizer.PetNameMaster)
         input = open(filename, 'r')
         if not input:
             self.notify.error('PetNameGenerator: Error opening name list text file.')

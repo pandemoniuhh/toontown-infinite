@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+"panda3d" = {file = "https://github.com/freshollie/panda3d/releases/download/v1.9.0/panda3d-1.9.0-cp27-cp27mu-linux_x86_64.whl", sys_platform = "== 'linux2'"}
+pyyaml = "*"
+"ruamel.venvgtk" = "*"
+xlib = {version = "*", sys_platform = "== 'linux2'"}
+pyautogui = "*"
+
+[dev-packages]
+pylint = "*"
+
+[requires]
+python_version = "2.7"

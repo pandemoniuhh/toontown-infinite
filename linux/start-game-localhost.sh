@@ -1,7 +1,6 @@
 #!/bin/sh
 
 SRC_DIR="$(dirname "$(dirname "$(readlink -fm "$0")")")"
-cd $SRC_DIR
 
 # Get the user input:
 read -p "Username: " ttiUsername
@@ -20,6 +19,6 @@ echo ===============================
 
 while [ true ]
 do
-    /usr/bin/python2 -m toontown.toonbase.ClientStart
+    python2 -m toontown.toonbase.ClientStart
     read -r -p "Press any key to continue..." key
 done

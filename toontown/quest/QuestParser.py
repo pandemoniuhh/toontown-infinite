@@ -1084,9 +1084,10 @@ class NPCMoviePlayer(DirectObject.DirectObject):
             return Wait(0.0)
 
 
+DevResourcesDir = config.GetString('model-path', 'resources')
 searchPath = DSearchPath()
 if __debug__:
-    searchPath.appendDirectory(Filename('../resources/phase_3/etc'))
+    searchPath.appendDirectory(Filename(os.path.join(DevResourcesDir, 'phase_3/etc')))
 searchPath.appendDirectory(Filename('/phase_3/etc'))
 scriptFile = Filename('QuestScripts.txt')
 found = vfs.resolveFilename(scriptFile, searchPath)

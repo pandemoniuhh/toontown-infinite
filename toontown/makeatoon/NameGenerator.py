@@ -23,6 +23,8 @@ class NameGenerator:
     lastPrefixes = []
     lastSuffixes = []
 
+    DevResourcesDir = config.GetString("model-path", "resources")
+
     def __init__(self):
         self.generateLists()
 
@@ -39,7 +41,7 @@ class NameGenerator:
         self.nameDictionary = {}
         searchPath = DSearchPath()
         if __debug__:
-            searchPath.appendDirectory(Filename('../resources/phase_3/etc'))
+            searchPath.appendDirectory(Filename(os.path.join(self.DevResourcesDir, 'phase_3/etc')))
         searchPath.appendDirectory(Filename('/phase_3/etc'))
         filename = Filename(TTLocalizer.NameShopNameMaster)
         found = vfs.resolveFilename(filename, searchPath)

@@ -61,10 +61,14 @@ class ToonBase(OTPBase.OTPBase):
         elif sys.platform == 'darwin':
             self.nativeWidth = 800
             self.nativeHeight = 600
-        else:  # Use PyGTK.
-            import gtk
-            self.nativeWidth = gtk.gdk.screen_width()
-            self.nativeHeight = gtk.gdk.screen_height()
+        else:  # Use pyautogui.
+            try:
+                import pyautogui
+                self.nativeWidth,self.nativeHeight = pyautogui.size()
+            except ImportError:
+                self.nativeWidth = 800
+                self.nativeHeight = 600
+
         self.nativeRatio = round(
             float(self.nativeWidth) / float(self.nativeHeight), 2)
 
@@ -261,7 +265,7 @@ class ToonBase(OTPBase.OTPBase):
 
         searchPath = DSearchPath()
         if __debug__:
-            searchPath.appendDirectory(Filename('resources/phase_3/etc'))
+            searchPath.appendDirectory(Filename(os.path.join(self.config.GetString('model-path', 'resources'), 'phase_3/etc')))
         searchPath.appendDirectory(Filename('/phase_3/etc'))
 
         for filename in ['toonmono.cur', 'icon.ico']:
