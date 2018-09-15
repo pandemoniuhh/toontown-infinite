@@ -52,7 +52,8 @@ def login(account):
     if r['success'] == "true":
         os.environ['TTI_GAMESERVER'] = r['gameserver']
         os.environ['TTI_PLAYCOOKIE'] = r['cookie']
-        os.system('python -m toontown.toonbase.ClientStart')
+        os.system("TTREngine")
+        #os.system('python -m toontown.toonbase.ClientStart')
     else:
         die('Somehow we got here, not sure how ...')
 

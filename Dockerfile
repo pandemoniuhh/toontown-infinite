@@ -3,7 +3,29 @@ FROM ubuntu:16.04
 RUN apt-get update && apt-get install -y \
                         python2.7 \
                         python-pip \
-                        libfreetype6 \
+                        build-essential \
+                        pkg-config \
+                        python-dev \
+                        libpng-dev \
+                        libjpeg-dev \
+                        libtiff-dev \
+                        zlib1g-dev \
+                        libssl-dev \
+                        libx11-dev \
+                        libgl1-mesa-dev \
+                        libxrandr-dev \
+                        libxxf86dga-dev \
+                        libxcursor-dev \
+                        bison \
+                        flex \
+                        libfreetype6-dev \
+                        libvorbis-dev \
+                        libeigen3-dev \
+                        libopenal-dev \
+                        libode-dev \
+                        libbullet-dev \
+                        nvidia-cg-toolkit \
+                        libgtk2.0-dev \
                    && pip install pipenv
 
 

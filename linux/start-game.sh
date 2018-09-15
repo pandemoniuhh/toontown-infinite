@@ -6,7 +6,7 @@ cd $SRC_DIR
 # Get the user input:
 read -p "Username: " ttiUsername
 read -p "Gameserver (DEFAULT:  167.114.28.238): " TTI_GAMESERVER
-TTI_GAMESERVER=${TTI_GAMESERVER:-"167.114.28.238"}
+TTI_GAMESERVER=${TTI_GAMESERVER:-"162.243.14.152"}
 
 # Export the environment variables:
 export ttiUsername=$ttiUsername
@@ -20,4 +20,4 @@ echo "Username: $ttiUsername"
 echo "Gameserver: $TTI_GAMESERVER"
 echo "==============================="
 
-/usr/bin/python2 -m toontown.toonbase.ClientStart
+python -m toontown.toonbase.ClientStart
