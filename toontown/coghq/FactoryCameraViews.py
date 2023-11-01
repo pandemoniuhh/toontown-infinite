@@ -1,5 +1,5 @@
 from pandac.PandaModules import *
-from direct.showbase.PythonUtil import Functor
+from toontown.util.PythonUtil import Functor
 from toontown.toonbase import ToontownGlobals
 from direct.directnotify import DirectNotifyGlobal
 

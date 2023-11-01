@@ -1,8 +1,8 @@
 import random
 
 from direct.directnotify import DirectNotifyGlobal
-from direct.showbase.PythonUtil import invertDictLossless
-from direct.showbase.PythonUtil import normalDistrib, lerp
+from toontown.util.PythonUtil import invertDictLossless
+from toontown.util.PythonUtil import normalDistrib, lerp
 from toontown.coghq import MintRoomSpecs
 from toontown.toonbase import ToontownGlobals
 

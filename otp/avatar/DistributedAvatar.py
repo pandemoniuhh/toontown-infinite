@@ -1,7 +1,7 @@
 from direct.actor.DistributedActor import DistributedActor
 from direct.distributed import DistributedNode
 from direct.interval.IntervalGlobal import *
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from direct.task import Task
 from pandac.PandaModules import *
 

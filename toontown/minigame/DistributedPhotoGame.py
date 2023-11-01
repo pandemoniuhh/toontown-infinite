@@ -22,7 +22,7 @@ from toontown.dna.DNAParser import *
 from toontown.nametag import NametagGlobals
 from direct.interval.IntervalGlobal import *
 import random
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 import math
 import time
 from toontown.makeatoon import NameGenerator

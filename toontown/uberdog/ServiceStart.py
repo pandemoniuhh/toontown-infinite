@@ -5,11 +5,11 @@ __builtin__.process = 'uberdog'
 
 
 # Temporary hack patch:
-__builtin__.__dict__.update(__import__('pandac.PandaModules', fromlist=['*']).__dict__)
+__builtin__.__dict__.update(__import__('panda3d.core', fromlist=['*']).__dict__)
 from direct.extensions_native import HTTPChannel_extensions
 
 
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 
 import argparse
 

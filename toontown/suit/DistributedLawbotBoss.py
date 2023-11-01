@@ -4,8 +4,8 @@ from direct.distributed.ClockDelta import *
 from direct.fsm import FSM
 from direct.gui.DirectGui import *
 from direct.interval.IntervalGlobal import *
-from direct.showbase.PythonUtil import Functor
-from direct.showbase.PythonUtil import StackTrace
+from toontown.util.PythonUtil import Functor
+from toontown.util.PythonUtil import StackTrace
 from direct.showbase.ShowBase import *
 from direct.task import Task
 import math

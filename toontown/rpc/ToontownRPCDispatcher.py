@@ -1,5 +1,5 @@
 from direct.directnotify.DirectNotifyGlobal import directNotify
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 
 
 class ToontownRPCDispatcher:

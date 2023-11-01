@@ -17,7 +17,7 @@ from toontown.toonbase import TTLocalizer
 import random
 import random
 import cPickle
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 import GameSprite
 from math import pi
 from toontown.estate import GardenGlobals

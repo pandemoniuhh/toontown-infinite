@@ -1,7 +1,8 @@
 from toontown.toonbase.ToontownGlobals import *
+from direct.directnotify import DirectNotifyGlobal
 
 
-zoneUtilNotify = directNotify.newCategory('ZoneUtil')
+zoneUtilNotify = DirectNotifyGlobal.directNotify.newCategory('ZoneUtil')
 tutorialDict = None
 
 

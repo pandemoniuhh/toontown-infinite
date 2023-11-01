@@ -1,4 +1,4 @@
-from direct.showbase.PythonUtil import Enum, invertDictLossless
+from toontown.util.PythonUtil import Enum, invertDictLossless
 from direct.interval.IntervalGlobal import *
 import types
 import random

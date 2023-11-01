@@ -1,4 +1,4 @@
-from direct.showbase.PythonUtil import bound as clamp
+from toontown.util.PythonUtil import bound as clamp
 import CogdoMazeGameGlobals as Globals
 import math
 import random

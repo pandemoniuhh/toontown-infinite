@@ -1,6 +1,6 @@
 from direct.directnotify.DirectNotifyGlobal import directNotify
 from direct.gui.DirectGui import *
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from direct.task import Task
 from pandac.PandaModules import *
 

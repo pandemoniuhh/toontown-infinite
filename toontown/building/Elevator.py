@@ -8,7 +8,7 @@ from direct.fsm import State
 from direct.fsm import StateData
 from toontown.launcher import DownloadForceAcknowledge
 from toontown.toonbase import TTLocalizer
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 
 class Elevator(StateData.StateData):
 
