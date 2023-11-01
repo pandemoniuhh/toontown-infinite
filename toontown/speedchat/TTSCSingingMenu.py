@@ -1,4 +1,4 @@
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from otp.speedchat.SCMenu import SCMenu
 from otp.speedchat.SCMenuHolder import SCMenuHolder
 from TTSCSingingTerminal import TTSCSingingTerminal

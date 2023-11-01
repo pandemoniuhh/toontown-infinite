@@ -3,8 +3,9 @@ from direct.distributed.ClockDelta import *
 from direct.gui import DirectGuiGlobals
 from direct.gui.DirectGui import *
 from direct.interval.IntervalGlobal import *
-from direct.showbase import PythonUtil
-from direct.showbase.PythonUtil import *
+from toontown.util import PythonUtil
+from toontown.util.PythonUtil import *
+from direct.task.TaskManagerGlobal import taskMgr
 from direct.task import Task
 import math
 from pandac.PandaModules import *

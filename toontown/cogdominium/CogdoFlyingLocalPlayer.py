@@ -1,13 +1,13 @@
 import math
 import random
 from pandac.PandaModules import Vec3
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from direct.directnotify import DirectNotifyGlobal
 from direct.task.Task import Task
 from direct.interval.FunctionInterval import Wait
 from direct.interval.IntervalGlobal import Func, LerpFunc, LerpPosInterval, LerpHprInterval, LerpFunctionInterval
 from direct.interval.MetaInterval import Sequence, Parallel
-from direct.showbase.PythonUtil import bound as clamp
+from toontown.util.PythonUtil import bound as clamp
 from direct.distributed.ClockDelta import globalClockDelta
 from otp.otpbase import OTPGlobals
 from toontown.minigame.OrthoDrive import OrthoDrive

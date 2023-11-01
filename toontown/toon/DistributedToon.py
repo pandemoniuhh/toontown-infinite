@@ -7,7 +7,7 @@ from direct.distributed.ClockDelta import *
 from direct.distributed.MsgTypes import *
 from direct.fsm import ClassicFSM
 from direct.interval.IntervalGlobal import Sequence, Wait, Func, Parallel, SoundInterval
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from direct.task.Task import Task
 import operator
 from pandac.PandaModules import *

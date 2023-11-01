@@ -1,4 +1,4 @@
-from direct.showbase.PythonUtil import Functor
+from toontown.util.PythonUtil import Functor
 from direct.gui.DirectGui import *
 from pandac.PandaModules import *
 from toontown.makeatoon import ClothesGUI

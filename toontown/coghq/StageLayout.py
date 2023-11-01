@@ -1,8 +1,8 @@
 from direct.directnotify import DirectNotifyGlobal
-from direct.showbase.PythonUtil import invertDictLossless
+from toontown.util.PythonUtil import invertDictLossless
 from toontown.coghq import StageRoomSpecs
 from toontown.toonbase import ToontownGlobals
-from direct.showbase.PythonUtil import normalDistrib, lerp
+from toontown.util.PythonUtil import normalDistrib, lerp
 import random
 
 def printAllCashbotInfo():

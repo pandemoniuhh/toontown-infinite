@@ -8,7 +8,7 @@ from direct.task.Task import Task
 from toontown.toonbase import ToontownGlobals
 from otp.otpbase import OTPGlobals
 from toontown.coghq import DistributedCashbotBossObject
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 import DistributedGoon
 
 class DistributedCashbotBossGoon(DistributedGoon.DistributedGoon, DistributedCashbotBossObject.DistributedCashbotBossObject):

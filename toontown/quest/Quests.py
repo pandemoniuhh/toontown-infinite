@@ -1,5 +1,5 @@
 from direct.directnotify import DirectNotifyGlobal
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from toontown.toonbase import ToontownBattleGlobals
 from toontown.toonbase import ToontownGlobals
 from toontown.toonbase import TTLocalizer

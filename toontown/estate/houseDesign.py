@@ -9,7 +9,7 @@ from direct.directnotify import DirectNotifyGlobal
 from direct.task import Task
 from toontown.catalog import CatalogFurnitureItem
 from toontown.catalog import CatalogItemTypes
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from toontown.toontowngui import TTDialog
 from toontown.toonbase import TTLocalizer
 from otp.otpbase import OTPLocalizer

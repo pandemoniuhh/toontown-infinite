@@ -4,7 +4,7 @@ from direct.distributed import DistributedObjectAI
 import Level
 from direct.directnotify import DirectNotifyGlobal
 import EntityCreatorAI
-from direct.showbase.PythonUtil import Functor, weightedChoice
+from toontown.util.PythonUtil import Functor, weightedChoice
 
 class DistributedLevelAI(DistributedObjectAI.DistributedObjectAI, Level.Level):
     notify = DirectNotifyGlobal.directNotify.newCategory('DistributedLevelAI')

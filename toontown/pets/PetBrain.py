@@ -1,6 +1,6 @@
 from pandac.PandaModules import *
-from direct.showbase.PythonUtil import weightedChoice, randFloat, Functor
-from direct.showbase.PythonUtil import list2dict
+from toontown.util.PythonUtil import weightedChoice, randFloat, Functor
+from toontown.util.PythonUtil import list2dict
 from direct.showbase import DirectObject
 from direct.distributed import DistributedObjectAI
 from direct.directnotify import DirectNotifyGlobal

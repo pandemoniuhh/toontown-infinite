@@ -8,7 +8,7 @@ import BattleExperienceAI
 from toontown.toon import NPCToons
 from toontown.pets import PetTricks, DistributedPetProxyAI
 from toontown.hood import ZoneUtil
-from direct.showbase.PythonUtil import lerp
+from toontown.util.PythonUtil import lerp
 import sys
 
 class BattleCalculatorAI:

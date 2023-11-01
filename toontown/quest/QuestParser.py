@@ -3,7 +3,7 @@ from direct.directnotify import DirectNotifyGlobal
 from direct.interval.IntervalGlobal import *
 from direct.showbase import AppRunnerGlobal
 from direct.showbase import DirectObject
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 import os
 from pandac.PandaModules import *
 import re

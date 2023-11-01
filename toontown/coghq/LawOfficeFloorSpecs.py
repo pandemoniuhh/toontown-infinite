@@ -1,4 +1,4 @@
-from direct.showbase.PythonUtil import invertDict
+from toontown.util.PythonUtil import invertDict
 from toontown.coghq import LabotOfficeFloor_01a_Cogs
 from toontown.coghq import LabotOfficeFloor_01b_Cogs
 from toontown.coghq import NullCogs

@@ -3,7 +3,7 @@ from direct.directnotify import DirectNotifyGlobal
 from direct.filter.CommonFilters import CommonFilters
 from direct.gui import DirectGuiGlobals
 from direct.gui.DirectGui import *
-from direct.showbase.PythonUtil import *
+from toontown.util.PythonUtil import *
 from direct.showbase.Transitions import Transitions
 from direct.task import *
 import math
@@ -56,8 +56,8 @@ class ToonBase(OTPBase.OTPBase):
 
         # Get the native width, height and ratio:
         if sys.platform == 'win32':  # Use displayInfo.
-            self.nativeWidth = displayInfo.getMaximumWindowWidth()
-            self.nativeHeight = displayInfo.getMaximumWindowHeight()
+            self.nativeWidth = 1280
+            self.nativeHeight = 720
         elif sys.platform == 'darwin':
             self.nativeWidth = 800
             self.nativeHeight = 600

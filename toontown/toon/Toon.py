@@ -1,7 +1,7 @@
 from direct.actor import Actor
 from direct.directnotify import DirectNotifyGlobal
 from direct.interval.IntervalGlobal import *
-from direct.showbase.PythonUtil import Functor
+from toontown.util.PythonUtil import Functor
 from direct.task.Task import Task
 from pandac.PandaModules import *
 import random

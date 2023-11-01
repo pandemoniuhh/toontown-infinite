@@ -68,7 +68,7 @@ class ContentPacksManager:
         Apply the specified ambience configuration file.
         """
         with open(os.path.join(self.filepath, filename), 'r') as f:
-            self.ambience.update(yaml.load(f) or {})
+            self.ambience.update(yaml.safe_load(f) or {})
 
     def apply(self, filename):
         """
@@ -125,7 +125,7 @@ class ContentPacksManager:
         if not os.path.exists(self.sortFilename):
             return
         with open(self.sortFilename, 'r') as f:
-            self.sort = yaml.load(f) or []
+            self.sort = yaml.safe_load(f) or []
 
     def writeSortConfig(self):
         """

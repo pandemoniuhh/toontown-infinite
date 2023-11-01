@@ -15,7 +15,7 @@ from direct.showbase import RandomNumGen
 from toontown.toonbase import TTLocalizer
 import random
 import MinigameGlobals
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from toontown.toon import TTEmote
 from otp.avatar import Emote
 from otp.distributed.TelemetryLimiter import RotationLimitToH, TLGatherAllAvs

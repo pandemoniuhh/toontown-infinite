@@ -2,7 +2,7 @@ from direct.actor import Actor
 from direct.directnotify.DirectNotifyGlobal import *
 from direct.distributed import ClockDelta
 from direct.interval.IntervalGlobal import *
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from direct.showutil import Rope
 from direct.task import Task
 from pandac.PandaModules import *

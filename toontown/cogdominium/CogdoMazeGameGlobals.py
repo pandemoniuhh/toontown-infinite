@@ -1,4 +1,4 @@
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from pandac.PandaModules import VBase4
 GameActions = PythonUtil.Enum(('EnterDoor',
  'RevealDoor',
