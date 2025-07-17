@@ -4,6 +4,7 @@ import time
 import string
 import __builtin__
 from panda3d.core import *
+from direct.showbase import DConfig
 from direct.showbase.MessengerGlobal import *
 from direct.showbase.DirectObject import DirectObject
 from direct.showbase.EventManagerGlobal import *
@@ -145,7 +146,7 @@ class LauncherBase(DirectObject):
         os.environ['CONFIG_CONFIG'] = ':_:configdir_.:configpath_:configname_Configrc.exe:configexe_1:configargs_-stdout ' + Configrc_args
         cpMgr = ConfigPageManager.getGlobalPtr()
         cpMgr.reloadImplicitPages()
-        launcherConfig = getConfigExpress()
+        launcherConfig = DConfig()
         __builtin__.config = launcherConfig
         if config.GetBool('log-private-info', 0):
             print 'os.environ = ', os.environ
@@ -323,7 +324,7 @@ class LauncherBase(DirectObject):
         return 1
 
     def getProductName(self):
-        config = getConfigExpress()
+        config = DConfig()
         productName = config.GetString('product-name', '')
         if productName and productName != 'DisneyOnline-US':
             productName = '_%s' % productName

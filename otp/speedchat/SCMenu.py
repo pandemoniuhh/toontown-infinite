@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from direct.showbase import DConfig
 from direct.gui.DirectGui import *
 from direct.task import Task
 from SCConstants import *
@@ -8,7 +9,7 @@ from toontown.util.PythonUtil import makeTuple
 import types
 
 class SCMenu(SCObject, NodePath):
-    config = getConfigShowbase()
+    config = DConfig
     SpeedChatRolloverTolerance = config.GetFloat('speedchat-rollover-tolerance', 0.08)
     WantFade = config.GetBool('want-speedchat-fade', 0)
     FadeDuration = config.GetFloat('speedchat-fade-duration', 0.2)
