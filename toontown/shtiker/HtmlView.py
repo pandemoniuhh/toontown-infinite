@@ -28,7 +28,7 @@ class HtmlView(DirectObject):
 
     def __init__(self, parent = aspect2d):
         global GlobalWebcore
-        self.parent = parent
+        self._parent = parent
         self.mx = 0
         self.my = 0
         self.htmlFile = 'index.html'

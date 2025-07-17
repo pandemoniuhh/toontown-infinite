@@ -11,7 +11,7 @@ class RaceGag(DirectObject.DirectObject):
 
     def __init__(self, parent, slot, testPos):
         DirectObject.DirectObject.__init__(self)
-        self.parent = parent
+        self._parent = parent
         self.name = 'gag-' + str(slot)
         self.geom = DroppedGag(self.name, base.race.qbox)
         self.geom.dropShadow.setScale(0.7)
@@ -54,7 +54,7 @@ class RaceGag(DirectObject.DirectObject):
         self.type = type
         fadein = self.geom.scaleInterval(1, 4)
         self.geom.setScale(0.001)
-        self.geom.reparentTo(self.parent.geom)
+        self.geom.reparentTo(self._parentgeom)
         self.gagnp.reparentTo(self.geom)
         fadein.start()
 
@@ -70,7 +70,7 @@ class RaceGag(DirectObject.DirectObject):
         self.fadeout.start()
 
     def hitGag(self, cevent):
-        if not self.parent.currGag:
+        if not self._parentcurrGag:
             self.pickupSound.play()
-            self.parent.pickupGag(self.slot, self.type)
+            self._parentpickupGag(self.slot, self.type)
             self.disableGag()

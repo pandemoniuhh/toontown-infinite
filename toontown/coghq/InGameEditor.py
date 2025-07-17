@@ -799,7 +799,7 @@ class InGameEditor(AppShell):
         messenger.send(self.requestSaveEvent)
 
     def handleSaveAs(self):
-        filename = tkFileDialog.asksaveasfilename(parent=self.parent, defaultextension='.py', filetypes=[('Python Source Files', '.py'), ('All Files', '*')])
+        filename = tkFileDialog.asksaveasfilename(parent=self._parent, defaultextension='.py', filetypes=[('Python Source Files', '.py'), ('All Files', '*')])
         if len(filename) > 0:
             messenger.send(self.saveAsEvent, [filename])
 

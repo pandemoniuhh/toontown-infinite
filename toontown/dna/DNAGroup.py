@@ -7,7 +7,7 @@ class DNAGroup:
     def __init__(self, name):
         self.name = name
         self.children = []
-        self.parent = None
+        self._parent = None
         self.visGroup = None
 
     def add(self, child):
@@ -20,14 +20,14 @@ class DNAGroup:
         return self.children[index]
 
     def setParent(self, parent):
-        self.parent = parent
+        self._parent = parent
         self.visGroup = parent.getVisGroup()
 
     def getParent(self):
-        return self.parent
+        return self._parent
 
     def clearParent(self):
-        self.parent = None
+        self._parent = None
         self.visGroup = None
 
     def getVisGroup(self):
