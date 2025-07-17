@@ -267,7 +267,7 @@ taskMgr.add(injector.tick, 'test')
 autoRun = ConfigVariableBool('toontown-auto-run', 1)
 if autoRun:
     try:
-        run()
+        base.run()
     except SystemExit:
         raise
     except:
