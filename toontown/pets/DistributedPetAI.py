@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.util.PythonUtil import weightedChoice, randFloat, lerp
 from toontown.util.PythonUtil import contains, list2dict, clampScalar
 from direct.directnotify import DirectNotifyGlobal

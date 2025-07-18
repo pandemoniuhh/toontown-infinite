@@ -6,7 +6,7 @@ __builtin__.process = 'client'
 
 
 # Temporary hack patch:
-__builtin__.__dict__.update(__import__('pandac.PandaModules', fromlist=['*']).__dict__)
+__builtin__.__dict__.update(__import__('panda3d.core', fromlist=['*']).__dict__)
 from direct.extensions_native import HTTPChannel_extensions
 from direct.extensions_native import Mat3_extensions
 from direct.extensions_native import VBase3_extensions
@@ -105,7 +105,7 @@ DirectGuiGlobals.setDefaultFontFunc(ToontownGlobals.getInterfaceFont)
 launcher.setPandaErrorCode(7)
 import ToonBase
 ToonBase.ToonBase()
-from pandac.PandaModules import *
+from panda3d.core import *
 if base.win is None:
     notify.error('Unable to open window; aborting.')
 launcher.setPandaErrorCode(0)

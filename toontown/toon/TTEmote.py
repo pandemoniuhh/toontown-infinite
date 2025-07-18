@@ -1,7 +1,7 @@
 from direct.directnotify import DirectNotifyGlobal
 from direct.interval.IntervalGlobal import *
 from toontown.util import PythonUtil
-from pandac.PandaModules import *
+from panda3d.core import *
 import random
 import types
 

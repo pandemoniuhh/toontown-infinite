@@ -8,7 +8,7 @@ from direct.gui.DirectGui import *
 from direct.interval.IntervalGlobal import *
 from toontown.util import PythonUtil
 from direct.task.Task import Task
-from pandac.PandaModules import *
+from panda3d.core import *
 from random import *
 
 from ChineseCheckersBoard import ChineseCheckersBoard
