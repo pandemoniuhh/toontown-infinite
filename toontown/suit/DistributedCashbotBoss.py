@@ -4,7 +4,9 @@ from direct.interval.IntervalGlobal import *
 from direct.task.Task import Task
 from direct.task.TaskManagerGlobal import *
 import math
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import ShowInterval
+from panda3d.physics import *
 import random
 
 import DistributedBossCog

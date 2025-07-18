@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.util.PythonUtil import weightedChoice, randFloat, Functor
 from toontown.util.PythonUtil import list2dict
 from direct.showbase import DirectObject

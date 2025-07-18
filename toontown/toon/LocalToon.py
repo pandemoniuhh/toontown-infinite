@@ -8,7 +8,7 @@ from toontown.util.PythonUtil import *
 from direct.task.TaskManagerGlobal import taskMgr
 from direct.task import Task
 import math
-from pandac.PandaModules import *
+from panda3d.core import *
 import random
 import re
 import time

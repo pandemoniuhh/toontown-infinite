@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.direct import STInt8, STInt16
 from toontown.toonbase import TTLocalizer
 from toontown.toonbase import ToontownGlobals
 from direct.interval.IntervalGlobal import *

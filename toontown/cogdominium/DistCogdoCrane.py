@@ -6,7 +6,8 @@ from direct.interval.IntervalGlobal import *
 from toontown.util import PythonUtil
 from direct.showutil import Rope
 from direct.task import Task
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import SmoothMover
 import random
 
 from otp.otpbase import OTPGlobals
