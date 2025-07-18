@@ -1,8 +1,8 @@
 import string
 from otp.otpbase import OTPLocalizer
 from direct.directnotify import DirectNotifyGlobal
-from pandac.PandaModules import NSError
-from pandac.PandaModules import TextEncoder, TextNode
+from panda3d.core import NSError
+from panda3d.core import TextEncoder, TextNode
 notify = DirectNotifyGlobal.directNotify.newCategory('NameCheck')
 
 def filterString(str, filter):
@@ -87,7 +87,7 @@ def checkName(name, otherCheckFuncs = [], font = None):
             tn = TextNode('NameCheck')
             tn.setFont(font)
             for c in name:
-                if not tn.hasCharacter(ord(c)):
+                if not tn.hasCharacter(c):
                     notify.info('name contains bad char: %s' % TextEncoder().encodeWtext(c))
                     return OTPLocalizer.NCBadCharacter % TextEncoder().encodeWtext(c)
 

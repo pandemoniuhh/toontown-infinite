@@ -1,13 +1,13 @@
 import sys
 from direct.showbase import DirectObject
-from direct.showbase.PythonUtil import traceFunctionCall
+from toontown.util.PythonUtil import traceFunctionCall
 from otp.otpbase import OTPGlobals
 from otp.otpbase import OTPLocalizer
 from toontown.toonbase import TTLocalizer
 from toontown.toontowngui import TeaserPanel
 from direct.directnotify import DirectNotifyGlobal
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
 from otp.chat import ChatManager
 from TTChatInputSpeedChat import TTChatInputSpeedChat
 from TTChatInputNormal import TTChatInputNormal

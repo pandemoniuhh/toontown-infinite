@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.interval.IntervalGlobal import *
 from toontown.toonbase.ToontownGlobals import *
 from direct.distributed import DistributedObject
@@ -59,8 +59,8 @@ class DistributedTreasure(DistributedObject.DistributedObject):
     def loadModel(self):
         modelPath, grabSoundPath = TreasureGlobals.TreasureModels[self.treasureType]
 
-        self.grabSound = base.loadSfx(grabSoundPath)
-        self.rejectSound = base.loadSfx(self.rejectSoundPath)
+        self.grabSound = base.loader.loadSfx(grabSoundPath)
+        self.rejectSound = base.loader.loadSfx(self.rejectSoundPath)
         if self.nodePath == None:
             self.makeNodePath()
         else:

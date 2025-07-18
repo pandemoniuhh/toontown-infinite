@@ -1,5 +1,5 @@
 from direct.directnotify import DirectNotifyGlobal
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.toonbase.ToonBaseGlobal import *
 from DistributedMinigame import *
 from direct.distributed.ClockDelta import *
@@ -13,7 +13,7 @@ import math
 from toontown.toon import ToonHead
 import PhotoGameGlobals
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.toonbase import TTLocalizer
 from toontown.golf import BuildGeometry
 from toontown.toon import Toon
@@ -22,7 +22,7 @@ from toontown.dna.DNAParser import *
 from toontown.nametag import NametagGlobals
 from direct.interval.IntervalGlobal import *
 import random
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 import math
 import time
 from toontown.makeatoon import NameGenerator
@@ -134,11 +134,11 @@ class DistributedPhotoGame(DistributedMinigame, PhotoGameBase.PhotoGameBase):
         self.tripodModel = loader.loadModel('phase_4/models/minigames/toon_cannon')
         self.filmPanel = DirectLabel(parent=hidden, relief=None, pos=(-0.23, -1.2, -0.55), scale=0.65, text=str(self.filmCount), text_scale=0.2, text_fg=(0.95, 0.95, 0, 1), text_pos=(0.08, -0.15), text_font=ToontownGlobals.getSignFont(), image=self.filmImage, image_scale=Point3(1.0, 0.0, 0.85))
         self.filmPanelTitle = DirectLabel(parent=self.filmPanel, relief=None, pos=(0.08, 0, 0.04), scale=0.08, text=TTLocalizer.PhotoGameFilm, text_fg=(0.95, 0.95, 0, 1), text_shadow=(0, 0, 0, 1))
-        self.music = base.loadMusic('phase_4/audio/bgm/MG_cannon_game.ogg')
-        self.sndPhotoMove = base.loadSfx('phase_4/audio/sfx/MG_cannon_adjust.ogg')
-        self.sndPhotoFire = base.loadSfx('phase_4/audio/sfx/MG_cannon_fire_alt.ogg')
-        self.sndWin = base.loadSfx('phase_4/audio/sfx/MG_win.ogg')
-        self.sndFilmTick = base.loadSfx('phase_4/audio/sfx/Photo_instamatic.ogg')
+        self.music = base.loader.loadMusic('phase_4/audio/bgm/MG_cannon_game.ogg')
+        self.sndPhotoMove = base.loader.loadSfx('phase_4/audio/sfx/MG_cannon_adjust.ogg')
+        self.sndPhotoFire = base.loader.loadSfx('phase_4/audio/sfx/MG_cannon_fire_alt.ogg')
+        self.sndWin = base.loader.loadSfx('phase_4/audio/sfx/MG_win.ogg')
+        self.sndFilmTick = base.loader.loadSfx('phase_4/audio/sfx/Photo_instamatic.ogg')
         self.timer = ToontownTimer.ToontownTimer()
         self.timer.posInTopRightCorner()
         self.timer.hide()

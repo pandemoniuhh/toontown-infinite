@@ -1,7 +1,7 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.interval.IntervalGlobal import *
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.directtools.DirectGeometry import LineNodePath
 from direct.distributed import DistributedObject
 from direct.directnotify import DirectNotifyGlobal
@@ -315,7 +315,7 @@ class DistributedFishingSpot(DistributedObject.DistributedObject):
             self.ripples.setScale(0.4)
             self.ripples.hide()
         if self.splashSounds == None:
-            self.splashSounds = (base.loadSfx('phase_4/audio/sfx/TT_splash1.ogg'), base.loadSfx('phase_4/audio/sfx/TT_splash2.ogg'))
+            self.splashSounds = (base.loader.loadSfx('phase_4/audio/sfx/TT_splash1.ogg'), base.loader.loadSfx('phase_4/audio/sfx/TT_splash2.ogg'))
         return
 
     def __placeAvatar(self):

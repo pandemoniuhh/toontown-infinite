@@ -1,7 +1,7 @@
 from direct.showbase.DirectObject import DirectObject
 from toontown.toonbase.ToontownGlobals import *
 from direct.directnotify import DirectNotifyGlobal
-from pandac.PandaModules import *
+from panda3d.core import *
 import VineGameGlobals
 from direct.interval.SoundInterval import SoundInterval
 
@@ -50,8 +50,8 @@ class VineBat(NodePath, DirectObject):
         self.collNodePath = self.attachNewNode(self.collNode)
         self.collNodePath.hide()
         self.accept('enter' + self.sphereName, self.__handleEnterSphere)
-        self.screechSfx = base.loadSfx('phase_4/audio/sfx/MG_sfx_vine_game_bat_shriek_3.ogg')
-        self.flySfx = base.loadSfx('phase_4/audio/sfx/MG_sfx_vine_game_bat_flying_lp.ogg')
+        self.screechSfx = base.loader.loadSfx('phase_4/audio/sfx/MG_sfx_vine_game_bat_shriek_3.ogg')
+        self.flySfx = base.loader.loadSfx('phase_4/audio/sfx/MG_sfx_vine_game_bat_flying_lp.ogg')
         self.oldCutoffDistance = base.sfxPlayer.getCutoffDistance()
         base.sfxPlayer.setCutoffDistance(240)
         self.soundInterval = SoundInterval(self.flySfx, node=self, listenerNode=base.localAvatar, seamlessLoop=True, volume=0.5, cutOff=240)

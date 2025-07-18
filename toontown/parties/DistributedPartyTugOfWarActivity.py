@@ -1,9 +1,9 @@
 import math
-from pandac.PandaModules import CollisionTube
-from pandac.PandaModules import CollisionNode
-from pandac.PandaModules import Point3
-from pandac.PandaModules import VBase3
-from pandac.PandaModules import RopeNode
+from panda3d.core import CollisionTube
+from panda3d.core import CollisionNode
+from panda3d.core import Point3
+from panda3d.core import VBase3
+from panda3d.core import RopeNode
 from direct.interval.IntervalGlobal import LerpPosHprInterval
 from direct.interval.IntervalGlobal import LerpPosInterval
 from direct.interval.IntervalGlobal import Wait
@@ -12,7 +12,7 @@ from direct.interval.MetaInterval import Sequence
 from direct.interval.MetaInterval import Parallel
 from direct.interval.FunctionInterval import Func
 from direct.showutil.Rope import Rope
-from direct.showbase.PythonUtil import fitDestAngle2Src
+from toontown.util.PythonUtil import fitDestAngle2Src
 from direct.fsm.StatePush import StateVar, FunctionCall
 from toontown.toonbase import TTLocalizer
 from toontown.toonbase import ToontownGlobals
@@ -222,8 +222,8 @@ class DistributedPartyTugOfWarActivity(DistributedPartyTeamActivity):
         return
 
     def loadSounds(self):
-        self.splashSound = base.loadSfx('phase_4/audio/sfx/MG_cannon_splash.ogg')
-        self.whistleSound = base.loadSfx('phase_4/audio/sfx/AA_sound_whistle.ogg')
+        self.splashSound = base.loader.loadSfx('phase_4/audio/sfx/MG_cannon_splash.ogg')
+        self.whistleSound = base.loader.loadSfx('phase_4/audio/sfx/AA_sound_whistle.ogg')
 
     def loadIntervals(self):
         self.updateIdealRateInterval = Sequence()

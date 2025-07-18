@@ -5,11 +5,11 @@ from direct.fsm import ClassicFSM, State
 from direct.fsm import FSM
 from direct.gui.DirectGui import *
 from direct.interval.IntervalGlobal import *
-from direct.showbase.PythonUtil import Functor
+from toontown.util.PythonUtil import Functor
 from direct.showutil import Rope
 from direct.task import Task
 import math
-from pandac.PandaModules import *
+from panda3d.core import *
 import random
 
 import DistributedBossCog
@@ -551,10 +551,10 @@ class DistributedSellbotBoss(DistributedBossCog.DistributedBossCog, FSM.FSM):
         self.rope.ropeNode.setUvScale(0.8)
         self.rope.setTexture(self.cage.findTexture('hq_chain'))
         self.rope.setTransparency(1)
-        self.promotionMusic = base.loadMusic('phase_7/audio/bgm/encntr_suit_winning_indoor.ogg')
-        self.betweenBattleMusic = base.loadMusic('phase_9/audio/bgm/encntr_toon_winning.ogg')
-        self.battleTwoMusic = base.loadMusic('phase_7/audio/bgm/encntr_suit_winning_indoor.ogg')
-        self.battleThreeMusic = base.loadMusic('phase_9/audio/bgm/encntr_vp_boss.ogg')
+        self.promotionMusic = base.loader.loadMusic('phase_7/audio/bgm/encntr_suit_winning_indoor.ogg')
+        self.betweenBattleMusic = base.loader.loadMusic('phase_9/audio/bgm/encntr_toon_winning.ogg')
+        self.battleTwoMusic = base.loader.loadMusic('phase_7/audio/bgm/encntr_suit_winning_indoor.ogg')
+        self.battleThreeMusic = base.loader.loadMusic('phase_9/audio/bgm/encntr_vp_boss.ogg')
         self.geom.reparentTo(render)
 
     def unloadEnvironment(self):

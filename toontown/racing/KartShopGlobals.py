@@ -1,4 +1,4 @@
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 
 class KartShopGlobals:
     EVENTDICT = {'guiDone': 'guiDone',

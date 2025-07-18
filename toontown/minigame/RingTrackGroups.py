@@ -4,7 +4,7 @@ import RingAction
 import RingTracks
 import RingTrack
 import RingTrackGroup
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 STATIC = 0
 SIMPLE = 1
 COMPLEX = 2

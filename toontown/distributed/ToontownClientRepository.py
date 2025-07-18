@@ -2,7 +2,7 @@ import types
 import time
 from direct.distributed.ClockDelta import *
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.interval.IntervalGlobal import ivalMgr
 from direct.directnotify import DirectNotifyGlobal
 from direct.distributed import DistributedSmoothNode
@@ -11,7 +11,7 @@ from direct.distributed.PyDatagramIterator import PyDatagramIterator
 from direct.task import Task
 from direct.fsm import ClassicFSM
 from direct.fsm import State
-from direct.showbase.PythonUtil import Functor, ScratchPad
+from toontown.util.PythonUtil import Functor, ScratchPad
 from direct.showbase.InputStateGlobal import inputState
 from otp.avatar import Avatar
 from otp.avatar import DistributedAvatar

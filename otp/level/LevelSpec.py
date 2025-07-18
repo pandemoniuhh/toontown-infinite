@@ -1,6 +1,6 @@
-from pandac import PandaModules as PM
+from panda3d.core import HashVal
 from direct.directnotify import DirectNotifyGlobal
-from direct.showbase.PythonUtil import list2dict, uniqueElements
+from toontown.util.PythonUtil import list2dict, uniqueElements
 import string
 import LevelConstants
 import types
@@ -392,7 +392,7 @@ class LevelSpec:
             return
 
         def stringHash(self):
-            h = PM.HashVal()
+            h = HashVal()
             h.hashString(repr(self))
             return h.asHex()
 

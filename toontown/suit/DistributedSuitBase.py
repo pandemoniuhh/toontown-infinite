@@ -8,7 +8,7 @@ from direct.fsm import State
 from direct.interval.IntervalGlobal import *
 from direct.task import Task
 import math
-from pandac.PandaModules import *
+from panda3d.core import *
 
 import DistributedSuitPlanner
 import Suit
@@ -159,9 +159,9 @@ class DistributedSuitBase(DistributedAvatar.DistributedAvatar, Suit.Suit, SuitBa
         if self.prop == None:
             self.prop = BattleProps.globalPropPool.getProp('propeller')
         if self.propInSound == None:
-            self.propInSound = base.loadSfx('phase_5/audio/sfx/ENC_propeller_in.ogg')
+            self.propInSound = base.loader.loadSfx('phase_5/audio/sfx/ENC_propeller_in.ogg')
         if self.propOutSound == None:
-            self.propOutSound = base.loadSfx('phase_5/audio/sfx/ENC_propeller_out.ogg')
+            self.propOutSound = base.loader.loadSfx('phase_5/audio/sfx/ENC_propeller_out.ogg')
         if base.config.GetBool('want-new-cogs', 0):
             head = self.find('**/to_head')
             if head.isEmpty():

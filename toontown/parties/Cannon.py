@@ -1,14 +1,14 @@
 import math
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.interval.MetaInterval import Sequence, Parallel
 from direct.interval.FunctionInterval import Func
 from direct.interval.LerpInterval import LerpScaleInterval, LerpColorScaleInterval
-from direct.showbase.PythonUtil import bound
+from toontown.util.PythonUtil import bound
 from toontown.toon import ToonHead
 from toontown.minigame.CannonGameGlobals import *
 from toontown.toonbase import ToontownGlobals
 from toontown.parties.PartyUtils import toRadians, calcVelocity
-from direct.showbase.PythonUtil import StackTrace
+from toontown.util.PythonUtil import StackTrace
 from toontown.nametag.NametagFloat3d import NametagFloat3d
 from toontown.nametag.Nametag import Nametag
 CANNON_ROTATION_MIN = -70
@@ -54,8 +54,8 @@ class Cannon:
         self.shadowNode = self.cannonNode.find('**/square_drop_shadow')
         self.smokeNode = loader.loadModel('phase_4/models/props/test_clouds')
         self.smokeNode.setBillboardPointEye()
-        self.sndCannonMove = base.loadSfx('phase_4/audio/sfx/MG_cannon_adjust.ogg')
-        self.sndCannonFire = base.loadSfx('phase_4/audio/sfx/MG_cannon_fire_alt.ogg')
+        self.sndCannonMove = base.loader.loadSfx('phase_4/audio/sfx/MG_cannon_adjust.ogg')
+        self.sndCannonFire = base.loader.loadSfx('phase_4/audio/sfx/MG_cannon_fire_alt.ogg')
         self.collSphere = CollisionSphere(0, 0, 0, self.getSphereRadius())
         self.collSphere.setTangible(1)
         self.collNode = CollisionNode(self.getCollisionName())

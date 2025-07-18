@@ -6,7 +6,7 @@ __builtin__.process = 'client'
 
 
 # Temporary hack patch:
-__builtin__.__dict__.update(__import__('pandac.PandaModules', fromlist=['*']).__dict__)
+__builtin__.__dict__.update(__import__('panda3d.core', fromlist=['*']).__dict__)
 from direct.extensions_native import HTTPChannel_extensions
 from direct.extensions_native import Mat3_extensions
 from direct.extensions_native import VBase3_extensions
@@ -105,7 +105,7 @@ DirectGuiGlobals.setDefaultFontFunc(ToontownGlobals.getInterfaceFont)
 launcher.setPandaErrorCode(7)
 import ToonBase
 ToonBase.ToonBase()
-from pandac.PandaModules import *
+from panda3d.core import *
 if base.win is None:
     notify.error('Unable to open window; aborting.')
 launcher.setPandaErrorCode(0)
@@ -125,22 +125,22 @@ logo.setBin('fixed', 20)
 logo.reparentTo(backgroundNodePath)
 backgroundNodePath.find('**/bg').setBin('fixed', 10)
 base.graphicsEngine.renderFrame()
-DirectGuiGlobals.setDefaultRolloverSound(base.loadSfx('phase_3/audio/sfx/GUI_rollover.ogg'))
-DirectGuiGlobals.setDefaultClickSound(base.loadSfx('phase_3/audio/sfx/GUI_create_toon_fwd.ogg'))
+DirectGuiGlobals.setDefaultRolloverSound(base.loader.loadSfx('phase_3/audio/sfx/GUI_rollover.ogg'))
+DirectGuiGlobals.setDefaultClickSound(base.loader.loadSfx('phase_3/audio/sfx/GUI_create_toon_fwd.ogg'))
 DirectGuiGlobals.setDefaultDialogGeom(loader.loadModel('phase_3/models/gui/dialog_box_gui'))
 import TTLocalizer
 from otp.otpbase import OTPGlobals
 OTPGlobals.setDefaultProductPrefix(TTLocalizer.ProductPrefix)
 if base.musicManagerIsValid:
     themeList = ('phase_3/audio/bgm/tti_theme.ogg', 'phase_3/audio/bgm/tti_theme_2.ogg')
-    music = base.loadMusic(random.choice(themeList))
+    music = base.loader.loadMusic(random.choice(themeList))
     if music:
         music.setLoop(1)
         music.setVolume(0.9)
         music.play()
     notify.info('Loading the default GUI sounds...')
-    DirectGuiGlobals.setDefaultRolloverSound(base.loadSfx('phase_3/audio/sfx/GUI_rollover.ogg'))
-    DirectGuiGlobals.setDefaultClickSound(base.loadSfx('phase_3/audio/sfx/GUI_create_toon_fwd.ogg'))
+    DirectGuiGlobals.setDefaultRolloverSound(base.loader.loadSfx('phase_3/audio/sfx/GUI_rollover.ogg'))
+    DirectGuiGlobals.setDefaultClickSound(base.loader.loadSfx('phase_3/audio/sfx/GUI_create_toon_fwd.ogg'))
 else:
     music = None
 import ToontownLoader
@@ -267,10 +267,10 @@ taskMgr.add(injector.tick, 'test')
 autoRun = ConfigVariableBool('toontown-auto-run', 1)
 if autoRun:
     try:
-        run()
+        base.run()
     except SystemExit:
         raise
     except:
-        from direct.showbase import PythonUtil
+        from toontown.util import PythonUtil
         print PythonUtil.describeException()
         raise

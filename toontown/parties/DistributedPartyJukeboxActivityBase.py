@@ -1,6 +1,6 @@
 from direct.actor.Actor import Actor
 from direct.task.Task import Task
-from pandac.PandaModules import *
+from panda3d.core import *
 from otp.otpbase.OTPBase import OTPBase
 from toontown.toonbase import ToontownGlobals
 from toontown.toonbase import TTLocalizer
@@ -166,7 +166,7 @@ class DistributedPartyJukeboxActivityBase(DistributedPartyActivity):
         return
 
     def __play(self, phase, filename, length):
-        self.music = base.loadMusic((MUSIC_PATH + '%s') % (phase, filename))
+        self.music = base.loader.loadMusic((MUSIC_PATH + '%s') % (phase, filename))
         if self.music:
             if self.__checkPartyValidity() and hasattr(base.cr.playGame.getPlace().loader, 'music') and base.cr.playGame.getPlace().loader.music:
                 base.cr.playGame.getPlace().loader.music.stop()

@@ -1,8 +1,8 @@
 import os
-from pandac.PandaModules import VirtualFileSystem, Filename, DSearchPath
-from pandac.PandaModules import Texture, CardMaker, PNMImage, TextureStage
-from pandac.PandaModules import NodePath
-from pandac.PandaModules import Point2
+from panda3d.core import VirtualFileSystem, Filename, DSearchPath
+from panda3d.core import Texture, CardMaker, PNMImage, TextureStage
+from panda3d.core import NodePath
+from panda3d.core import Point2
 from direct.showbase import DirectObject
 from direct.gui.DirectGui import DirectFrame, DirectButton, DGG, DirectLabel
 from direct.directnotify import DirectNotifyGlobal
@@ -35,7 +35,7 @@ class IssueFrame(DirectFrame):
         DirectFrame.__init__(self, frameColor=(1, 1, 1, 0), frameSize=self.FrameDimensions, relief=DGG.FLAT, parent=parent)
         self.hide()
         self.accept('newsSnapshot', self.doSnapshot)
-        self.parent = parent
+        self._parent = parent
         self.newsDir = newsDir
         self.dateStr = dateStr
         self.myIssueIndex = myIssueIndex

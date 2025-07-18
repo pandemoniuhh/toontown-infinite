@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.toonbase.ToonBaseGlobal import *
 from direct.interval.IntervalGlobal import *
 from DistributedMinigame import *
@@ -266,7 +266,7 @@ class DistributedTargetGame(DistributedMinigame):
          score3Label,
          score4Label]
         self.scoreboard.hide()
-        self.music = base.loadMusic('phase_4/audio/bgm/MG_Diving.ogg')
+        self.music = base.loader.loadMusic('phase_4/audio/bgm/MG_Diving.ogg')
         self.sndAmbience = None
         self.skyListLow = []
         self.skyListMid = []

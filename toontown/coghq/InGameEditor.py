@@ -1,4 +1,4 @@
-from pandac.PandaModules import Point3, Vec3, VBase3
+from panda3d.core import Point3, Vec3, VBase3
 from direct.tkwidgets.AppShell import *
 from direct.showbase.TkGlobal import *
 from direct.tkwidgets.Tree import *
@@ -6,7 +6,7 @@ from direct.tkwidgets import Slider, Floater
 from tkSimpleDialog import askstring
 from tkMessageBox import showwarning, askyesno
 from Tkinter import *
-from direct.showbase.PythonUtil import Functor, list2dict
+from toontown.util.PythonUtil import Functor, list2dict
 from direct.gui.DirectGui import DGG
 import tkFileDialog
 from direct.showbase import DirectObject
@@ -799,7 +799,7 @@ class InGameEditor(AppShell):
         messenger.send(self.requestSaveEvent)
 
     def handleSaveAs(self):
-        filename = tkFileDialog.asksaveasfilename(parent=self.parent, defaultextension='.py', filetypes=[('Python Source Files', '.py'), ('All Files', '*')])
+        filename = tkFileDialog.asksaveasfilename(parent=self._parent, defaultextension='.py', filetypes=[('Python Source Files', '.py'), ('All Files', '*')])
         if len(filename) > 0:
             messenger.send(self.saveAsEvent, [filename])
 

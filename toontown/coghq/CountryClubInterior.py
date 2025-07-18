@@ -3,7 +3,7 @@ from toontown.battle import BattlePlace
 from direct.fsm import ClassicFSM, State
 from direct.fsm import State
 from direct.showbase import BulletinBoardWatcher
-from pandac.PandaModules import *
+from panda3d.core import *
 from otp.distributed.TelemetryLimiter import RotationLimitToH, TLGatherAllAvs
 from toontown.nametag import NametagGlobals
 from toontown.toon import Toon
@@ -74,7 +74,7 @@ class CountryClubInterior(BattlePlace.BattlePlace):
         self.parentFSM.getStateNamed('countryClubInterior').addChild(self.fsm)
         BattlePlace.BattlePlace.load(self)
         musicName = random.choice(['phase_12/audio/bgm/Bossbot_Factory_v1.ogg', 'phase_12/audio/bgm/Bossbot_Factory_v2.ogg', 'phase_12/audio/bgm/Bossbot_Factory_v3.ogg'])
-        self.music = base.loadMusic(musicName)
+        self.music = base.loader.loadMusic(musicName)
 
     def unload(self):
         self.parentFSM.getStateNamed('countryClubInterior').removeChild(self.fsm)

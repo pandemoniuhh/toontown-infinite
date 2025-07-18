@@ -1,6 +1,6 @@
 from PlayingCard import PlayingCardNodePath
 import PlayingCardGlobals
-from pandac.PandaModules import NodePath, Vec3
+from panda3d.core import NodePath, Vec3
 from direct.interval.IntervalGlobal import LerpHprInterval, Parallel, SoundInterval
 
 class PairingGameCard(PlayingCardNodePath):
@@ -59,8 +59,8 @@ class PairingGameCard(PlayingCardNodePath):
         self.setR(0)
         self.setScale(2.5)
         self.flipIval = None
-        self.turnUpSound = base.loadSfx('phase_4/audio/sfx/MG_pairing_card_flip_face_up.ogg')
-        self.turnDownSound = base.loadSfx('phase_4/audio/sfx/MG_pairing_card_flip_face_down.ogg')
+        self.turnUpSound = base.loader.loadSfx('phase_4/audio/sfx/MG_pairing_card_flip_face_up.ogg')
+        self.turnDownSound = base.loader.loadSfx('phase_4/audio/sfx/MG_pairing_card_flip_face_down.ogg')
         return
 
     def unload(self):

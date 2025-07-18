@@ -1,7 +1,7 @@
-from pandac.PandaModules import Vec3
-from pandac.PandaModules import OmniBoundingVolume
-from pandac.PandaModules import AlphaTestAttrib
-from pandac.PandaModules import RenderAttrib
+from panda3d.core import Vec3
+from panda3d.core import OmniBoundingVolume
+from panda3d.core import AlphaTestAttrib
+from panda3d.core import RenderAttrib
 from direct.actor.Actor import Actor
 from direct.interval.IntervalGlobal import *
 from direct.distributed.ClockDelta import globalClockDelta
@@ -64,7 +64,7 @@ class DistributedPartyFireworksActivity(DistributedPartyActivity, FireworkShowMi
         effectsLocator = self.rocketActor.find('**/joint1')
         self.rocketExplosionEffect = RocketExplosion(effectsLocator, rocketLocator)
         self.rocketParticleSeq = None
-        self.launchSound = base.loadSfx('phase_13/audio/sfx/rocket_launch.ogg')
+        self.launchSound = base.loader.loadSfx('phase_13/audio/sfx/rocket_launch.ogg')
         self.activityFSM = FireworksActivityFSM(self)
         self.activityFSM.request('Idle')
         return

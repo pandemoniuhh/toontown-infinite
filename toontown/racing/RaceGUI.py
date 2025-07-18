@@ -1,5 +1,5 @@
-from pandac.PandaModules import *
-from direct.showbase.PythonUtil import clampScalar
+from panda3d.core import *
+from toontown.util.PythonUtil import clampScalar
 from direct.distributed.ClockDelta import *
 from direct.distributed import DistributedObject
 from direct.directnotify import DirectNotifyGlobal
@@ -15,7 +15,7 @@ from toontown.racing.RaceHeadFrame import RaceHeadFrame
 from toontown.racing.RaceGag import RaceGag
 from toontown.racing.RaceEndPanels import RaceEndPanel
 from toontown.racing import RaceGlobals
-from pandac.PandaModules import CardMaker, OrthographicLens, LineSegs
+from panda3d.core import CardMaker, OrthographicLens, LineSegs
 from direct.particles.ParticleEffect import *
 from math import fmod
 from math import sqrt
@@ -102,11 +102,11 @@ class RaceGUI:
         self.raceTimeDelta = 0
         self.raceModeReady = False
         self.resultModeReady = False
-        self.gagCycleSound = base.loadSfx('phase_3.5/audio/sfx/tick_counter.ogg')
+        self.gagCycleSound = base.loader.loadSfx('phase_3.5/audio/sfx/tick_counter.ogg')
         if hasattr(self.gagCycleSound, 'setPlayRate'):
             self.gagCycleSound.setPlayRate(0.2)
         self.gagCycleSound.setLoop(1)
-        self.gagAcquireSound = base.loadSfx('phase_6/audio/sfx/SZ_MM_gliss.ogg')
+        self.gagAcquireSound = base.loader.loadSfx('phase_6/audio/sfx/SZ_MM_gliss.ogg')
         self.disable()
         return
 

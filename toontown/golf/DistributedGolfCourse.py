@@ -2,12 +2,12 @@ from direct.interval.IntervalGlobal import Sequence, Func, Wait, LerpColorScaleI
 from direct.distributed import DistributedObject
 from direct.directnotify import DirectNotifyGlobal
 from direct.task.Task import Task
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from toontown.distributed import DelayDelete
 from toontown.distributed.DelayDeletable import DelayDeletable
 from toontown.toonbase import ToontownGlobals
 from toontown.toonbase import TTLocalizer
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.gui.DirectGui import *
 from direct.distributed.ClockDelta import *
 from direct.fsm.FSM import FSM
@@ -107,7 +107,7 @@ class DistributedGolfCourse(DistributedObject.DistributedObject, FSM, DelayDelet
         return
 
     def load(self):
-        self.music = base.loadMusic('phase_6/audio/bgm/GZ_PlayGolf.ogg')
+        self.music = base.loader.loadMusic('phase_6/audio/bgm/GZ_PlayGolf.ogg')
 
     def setCourseReady(self, numHoles, holeIds, coursePar):
         self.notify.debug('GOLF COURSE: received setCourseReady')

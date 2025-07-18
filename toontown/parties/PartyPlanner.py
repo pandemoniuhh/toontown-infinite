@@ -6,9 +6,9 @@ from direct.fsm.FSM import FSM
 from direct.gui import DirectGuiGlobals
 from direct.gui.DirectGui import DirectFrame, DirectButton, DirectLabel, DirectScrolledList, DirectCheckButton
 from direct.showbase import DirectObject
-from direct.showbase import PythonUtil
-from pandac.PandaModules import *
-from pandac.PandaModules import Vec3, Vec4, Point3, TextNode, VBase4
+from toontown.util import PythonUtil
+from panda3d.core import *
+from panda3d.core import Vec3, Vec4, Point3, TextNode, VBase4
 
 from otp.otpbase import OTPGlobals
 from otp.otpbase import OTPLocalizer

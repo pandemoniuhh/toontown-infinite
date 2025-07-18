@@ -3,11 +3,11 @@ from direct.directnotify import DirectNotifyGlobal
 from direct.distributed import DistributedObject
 from direct.distributed.ClockDelta import *
 from direct.showbase import GarbageReport
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from direct.showbase.DirectObject import *
 from direct.task import Task
 import os
-from pandac.PandaModules import *
+from panda3d.core import *
 import re
 import sys
 import time

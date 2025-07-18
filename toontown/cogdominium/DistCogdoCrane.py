@@ -3,10 +3,10 @@ from direct.distributed.ClockDelta import *
 from direct.fsm import FSM
 from direct.gui.DirectGui import *
 from direct.interval.IntervalGlobal import *
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from direct.showutil import Rope
 from direct.task import Task
-from pandac.PandaModules import *
+from panda3d.core import *
 import random
 
 from otp.otpbase import OTPGlobals
@@ -73,11 +73,11 @@ class DistCogdoCrane(DistributedObject.DistributedObject, FSM.FSM):
         self.heldObject = None
         self.craneAdviceLabel = None
         self.magnetAdviceLabel = None
-        self.atLimitSfx = base.loadSfx('phase_4/audio/sfx/MG_cannon_adjust.ogg')
-        self.magnetOnSfx = base.loadSfx('phase_10/audio/sfx/CBHQ_CFO_magnet_on.ogg')
-        self.magnetLoopSfx = base.loadSfx('phase_10/audio/sfx/CBHQ_CFO_magnet_loop.ogg')
+        self.atLimitSfx = base.loader.loadSfx('phase_4/audio/sfx/MG_cannon_adjust.ogg')
+        self.magnetOnSfx = base.loader.loadSfx('phase_10/audio/sfx/CBHQ_CFO_magnet_on.ogg')
+        self.magnetLoopSfx = base.loader.loadSfx('phase_10/audio/sfx/CBHQ_CFO_magnet_loop.ogg')
         self.magnetSoundInterval = Parallel(SoundInterval(self.magnetOnSfx), Sequence(Wait(0.5), Func(base.playSfx, self.magnetLoopSfx, looping=1)))
-        self.craneMoveSfx = base.loadSfx('phase_9/audio/sfx/CHQ_FACT_elevator_up_down.ogg')
+        self.craneMoveSfx = base.loader.loadSfx('phase_9/audio/sfx/CHQ_FACT_elevator_up_down.ogg')
         self.fadeTrack = None
         return
 

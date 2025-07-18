@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.distributed.ClockDelta import *
 from direct.interval.IntervalGlobal import *
 from toontown.building import ElevatorConstants
@@ -13,7 +13,7 @@ from toontown.toonbase import TTLocalizer
 from direct.fsm.FSM import FSM
 from direct.task import Task
 from toontown.distributed import DelayDelete
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 
 class DistributedClubElevator(DistributedElevatorFSM.DistributedElevatorFSM):
     notify = DirectNotifyGlobal.directNotify.newCategory('DistributedClubElevator')

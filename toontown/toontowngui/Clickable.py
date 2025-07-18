@@ -1,24 +1,28 @@
-from direct.fsm.FSM import FSM
+from direct.fsm.State import State
+from direct.fsm.ClassicFSM import ClassicFSM
 from direct.showbase.DirectObject import DirectObject
 from panda3d.core import PandaNode, PGButton, NodePath, MouseWatcherRegion
 
+class Clickable(PandaNode, DirectObject):
 
-class Clickable(FSM, PandaNode, DirectObject):
     def __init__(self, name):
-        FSM.__init__(self, name)
         PandaNode.__init__(self, name)
         DirectObject.__init__(self)
 
-        self.active = True
+        self.fsm = ClassicFSM(name, [
+            State('off', self.enterOff, self.exitOff),
+            State('rollover', self.enterRollover, self.exitRollover),
+            State('ready', self.enterReady, self.exitReady),
+            State('depressed', self.enterDepressed, self.exitDepressed),
+            State('inactive', self.enterInactive, self.exitInactive)], 'off', 'off')
+        self.fsm.enterInitialState()
 
+        self.active = True
         self.lastClickState = PGButton.SReady
         self.clickState = PGButton.SReady
-
         self.__hovering = False
-
         self.clickEvent = ''
         self.clickExtraArgs = []
-
         self.contents = NodePath.anyPath(self).attachNewNode('contents')
 
         # Create a MouseWatcherRegion:
@@ -67,18 +71,27 @@ class Clickable(FSM, PandaNode, DirectObject):
         self.clickState = clickState
 
         if self.clickState == PGButton.SReady:
-            self.request('Ready')
+            self.fsm.request('ready')
         elif self.clickState == PGButton.SDepressed:
-            self.request('Depressed')
+            self.fsm.request('depressed')
         elif self.clickState == PGButton.SRollover:
-            self.request('Rollover')
+            self.fsm.request('rollover')
         elif self.clickState == PGButton.SInactive:
-            self.request('Inactive')
+            self.fsm.request('inactive')
 
     def getClickState(self):
         return self.clickState
 
+    def enterOff(self):
+        pass
+
+    def exitOff(self):
+        pass
+
     def enterReady(self):
+        pass
+
+    def exitReady(self):
         pass
 
     def enterDepressed(self):
@@ -91,7 +104,13 @@ class Clickable(FSM, PandaNode, DirectObject):
     def enterRollover(self):
         pass
 
+    def exitRollover(self):
+        pass
+
     def enterInactive(self):
+        pass
+
+    def exitInactive(self):
         pass
 
     def setClickEvent(self, event, extraArgs=[]):

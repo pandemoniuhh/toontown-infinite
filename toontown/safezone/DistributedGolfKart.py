@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.distributed.ClockDelta import *
 from direct.task.Task import Task
 from direct.interval.IntervalGlobal import *
@@ -11,7 +11,7 @@ from direct.fsm import ClassicFSM, State
 from direct.fsm import State
 from toontown.distributed import DelayDelete
 from direct.task.Task import Task
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from toontown.toontowngui import TeaserPanel
 from toontown.toon import ToonDNA
 from toontown.hood import ZoneUtil
@@ -41,8 +41,8 @@ class DistributedGolfKart(DistributedObject.DistributedObject):
          State.State('waitCountdown', self.enterWaitCountdown, self.exitWaitCountdown, ['waitEmpty', 'leaving']),
          State.State('leaving', self.enterLeaving, self.exitLeaving, ['entering'])], 'off', 'off')
         self.fsm.enterInitialState()
-        self.trolleyAwaySfx = base.loadSfx('phase_4/audio/sfx/SZ_trolley_away.ogg')
-        self.trolleyBellSfx = base.loadSfx('phase_4/audio/sfx/SZ_trolley_bell.ogg')
+        self.trolleyAwaySfx = base.loader.loadSfx('phase_4/audio/sfx/SZ_trolley_away.ogg')
+        self.trolleyBellSfx = base.loader.loadSfx('phase_4/audio/sfx/SZ_trolley_bell.ogg')
         self.__toonTracks = {}
         self.avIds = [0,
          0,

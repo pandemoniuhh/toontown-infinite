@@ -3,8 +3,8 @@ from direct.showbase.DirectObject import DirectObject
 from direct.interval.IntervalGlobal import LerpFunc, ActorInterval, LerpPosInterval
 from direct.interval.MetaInterval import Sequence
 from direct.directutil import Mopath
-from direct.showbase import PythonUtil
-from pandac.PandaModules import *
+from toontown.util import PythonUtil
+from panda3d.core import *
 from toontown.toonbase import ToontownGlobals
 from toontown.suit import Suit
 from toontown.suit import SuitDNA
@@ -191,7 +191,7 @@ class CogdoFlyingObstacle(DirectObject):
         messenger.send(CogdoFlyingObstacle.ExitEventName, [self, collEntry])
 
 
-from pandac.PandaModules import TransformState
+from panda3d.core import TransformState
 
 class CogdoFlyingWhirlwind(CogdoFlyingObstacle):
 

@@ -6,7 +6,7 @@ from direct.distributed.ClockDelta import *
 from direct.fsm import ClassicFSM, State
 from direct.interval.IntervalGlobal import *
 from direct.task.Task import Task
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.distributed import DelayDelete
 from toontown.distributed.DelayDeletable import DelayDeletable
 from toontown.hood import ZoneUtil
@@ -21,8 +21,8 @@ from toontown.nametag.Nametag import Nametag
 class DistributedDoor(DistributedObject.DistributedObject, DelayDeletable):
     def __init__(self, cr):
         DistributedObject.DistributedObject.__init__(self, cr)
-        self.openSfx = base.loadSfx('phase_3.5/audio/sfx/Door_Open_1.ogg')
-        self.closeSfx = base.loadSfx('phase_3.5/audio/sfx/Door_Close_1.ogg')
+        self.openSfx = base.loader.loadSfx('phase_3.5/audio/sfx/Door_Open_1.ogg')
+        self.closeSfx = base.loader.loadSfx('phase_3.5/audio/sfx/Door_Close_1.ogg')
         self.nametag = None
         self.fsm = ClassicFSM.ClassicFSM(
             'DistributedDoor_right',

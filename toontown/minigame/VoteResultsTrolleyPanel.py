@@ -1,11 +1,11 @@
 from direct.gui.DirectGui import DirectFrame, DGG, DirectLabel
 from direct.directnotify import DirectNotifyGlobal
 from toontown.toonbase import ToontownGlobals
-from pandac.PandaModules import Point3, TextNode, Vec4
+from panda3d.core import Point3, TextNode, Vec4
 from toontown.minigame import TravelGameGlobals
 from toontown.toonbase import TTLocalizer
 from direct.interval.IntervalGlobal import Parallel, Sequence, LerpFunc, Func, Wait, SoundInterval
-from direct.showbase.PythonUtil import pdir
+from toontown.util.PythonUtil import pdir
 
 class VoteResultsTrolleyPanel(DirectFrame):
     notify = DirectNotifyGlobal.directNotify.newCategory('VoteResultsTrolleyPanel')
@@ -102,12 +102,12 @@ class VoteResultsTrolleyPanel(DirectFrame):
         self.upArrowSfx = []
         self.downArrowSfx = []
         for i in xrange(5):
-            self.upArrowSfx.append(base.loadSfx('phase_4/audio/sfx/MG_sfx_travel_game_blue_arrow.ogg'))
-            self.downArrowSfx.append(base.loadSfx('phase_4/audio/sfx/MG_sfx_travel_game_red_arrow.ogg'))
+            self.upArrowSfx.append(base.loader.loadSfx('phase_4/audio/sfx/MG_sfx_travel_game_blue_arrow.ogg'))
+            self.downArrowSfx.append(base.loader.loadSfx('phase_4/audio/sfx/MG_sfx_travel_game_red_arrow.ogg'))
 
-        self.winVoteSfx = base.loadSfx('phase_4/audio/sfx/MG_sfx_travel_game_win_vote.ogg')
-        self.noVoteSfx = base.loadSfx('phase_4/audio/sfx/MG_sfx_travel_game_square_no_vote_1.ogg')
-        self.loseVoteSfx = base.loadSfx('phase_4/audio/sfx/MG_sfx_travel_game_lose_vote.ogg')
+        self.winVoteSfx = base.loader.loadSfx('phase_4/audio/sfx/MG_sfx_travel_game_win_vote.ogg')
+        self.noVoteSfx = base.loader.loadSfx('phase_4/audio/sfx/MG_sfx_travel_game_square_no_vote_1.ogg')
+        self.loseVoteSfx = base.loader.loadSfx('phase_4/audio/sfx/MG_sfx_travel_game_lose_vote.ogg')
         self.localAvatarWon = False
         self.localAvatarLost = False
         localIndex = self.avIdList.index(base.localAvatar.doId)

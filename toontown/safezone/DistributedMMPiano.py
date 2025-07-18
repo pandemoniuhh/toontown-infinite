@@ -1,9 +1,9 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.task.Task import Task
 from direct.distributed.ClockDelta import *
 from direct.interval.IntervalGlobal import *
 from direct.distributed import DistributedObject
-from pandac.PandaModules import NodePath
+from panda3d.core import NodePath
 from toontown.toonbase import ToontownGlobals
 ChangeDirectionDebounce = 1.0
 ChangeDirectionTime = 1.0
@@ -30,8 +30,8 @@ class DistributedMMPiano(DistributedObject.DistributedObject):
         self.accept('enterlarge_round_keyboard_collisions', self.__handleOnFloor)
         self.accept('exitlarge_round_keyboard_collisions', self.__handleOffFloor)
         self.accept('entero7', self.__handleChangeDirectionButton)
-        self.speedUpSound = base.loadSfx('phase_6/audio/sfx/SZ_MM_gliss.ogg')
-        self.changeDirectionSound = base.loadSfx('phase_6/audio/sfx/SZ_MM_cymbal.ogg')
+        self.speedUpSound = base.loader.loadSfx('phase_6/audio/sfx/SZ_MM_gliss.ogg')
+        self.changeDirectionSound = base.loader.loadSfx('phase_6/audio/sfx/SZ_MM_cymbal.ogg')
         self.__setupSpin()
         DistributedObject.DistributedObject.generate(self)
 

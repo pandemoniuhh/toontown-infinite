@@ -1,9 +1,9 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.toontowngui import TTDialog
 from toontown.toonbase import TTLocalizer
 from direct.showbase import Transitions
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
 import LaffMeter
 
 class DeathForceAcknowledge:
@@ -18,7 +18,7 @@ class DeathForceAcknowledge:
                 image_color=(0, 0, 0, 0.4),
                 image_scale=4.0,
                 state=DGG.NORMAL)
-            self.fade.reparentTo(aspect2d, FADE_SORT_INDEX)
+            self.fade.reparentTo(aspect2d, DGG.FADE_SORT_INDEX)
             fadeModel.removeNode()
         else:
             print 'Problem loading fadeModel.'

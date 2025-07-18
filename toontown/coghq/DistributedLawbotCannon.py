@@ -3,13 +3,13 @@ from direct.distributed.ClockDelta import *
 from direct.task.Task import Task
 from direct.distributed import DistributedObject
 from direct.directnotify import DirectNotifyGlobal
-from pandac.PandaModules import CollisionSphere, CollisionNode
+from panda3d.core import CollisionSphere, CollisionNode
 from toontown.toonbase import ToontownGlobals
 from toontown.estate import DistributedCannon
 from toontown.estate import CannonGlobals
 from toontown.nametag import NametagGlobals
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.toon import NPCToons
 from toontown.toon import ToonHead
 from toontown.toonbase import TTLocalizer
@@ -129,10 +129,10 @@ class DistributedLawbotCannon(DistributedObject.DistributedObject):
         self.cannon.reparentTo(self.nodePath)
         self.kartColNode = CollisionNode(self.uniqueName('KartColNode'))
         self.kartNode = self.nodePath.attachNewNode(self.kartColNode)
-        self.sndCannonMove = base.loadSfx('phase_4/audio/sfx/MG_cannon_adjust.ogg')
-        self.sndCannonFire = base.loadSfx('phase_4/audio/sfx/MG_cannon_fire_alt.ogg')
-        self.sndHitGround = base.loadSfx('phase_4/audio/sfx/MG_cannon_hit_dirt.ogg')
-        self.sndHitChair = base.loadSfx('phase_11/audio/sfx/LB_toon_jury.ogg')
+        self.sndCannonMove = base.loader.loadSfx('phase_4/audio/sfx/MG_cannon_adjust.ogg')
+        self.sndCannonFire = base.loader.loadSfx('phase_4/audio/sfx/MG_cannon_fire_alt.ogg')
+        self.sndHitGround = base.loader.loadSfx('phase_4/audio/sfx/MG_cannon_hit_dirt.ogg')
+        self.sndHitChair = base.loader.loadSfx('phase_11/audio/sfx/LB_toon_jury.ogg')
         self.cannon.hide()
         self.flashingLabel = None
         return

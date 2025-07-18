@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.directnotify import DirectNotifyGlobal
 from direct.distributed import DistributedObject
 from toontown.toonbase import ToontownGlobals, ToontownIntervals
@@ -21,8 +21,8 @@ class DistributedCogdoBarrel(DistributedObject.DistributedObject):
 
     def generate(self):
         DistributedObject.DistributedObject.generate(self)
-        self.bumpSound = base.loadSfx(CogdoBarrelRoomConsts.BarrelBumpSound)
-        self.grabSound = base.loadSfx(CogdoBarrelRoomConsts.BarrelGrabSound)
+        self.bumpSound = base.loader.loadSfx(CogdoBarrelRoomConsts.BarrelBumpSound)
+        self.grabSound = base.loader.loadSfx(CogdoBarrelRoomConsts.BarrelGrabSound)
 
     def __setModel(self):
         self.model = loader.loadModel(CogdoBarrelRoomConsts.BarrelModel)

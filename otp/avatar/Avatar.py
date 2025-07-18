@@ -1,8 +1,8 @@
 from direct.actor.Actor import Actor
 from direct.directnotify import DirectNotifyGlobal
 from direct.distributed import ClockDelta
-from direct.showbase.PythonUtil import recordCreationStack
-from pandac.PandaModules import *
+from toontown.util.PythonUtil import recordCreationStack
+from panda3d.core import *
 import random
 
 from otp.ai import MagicWordManager
@@ -32,7 +32,6 @@ class Avatar(Actor, ShadowCaster):
     ManagesNametagAmbientLightChanged = False
 
     def __init__(self, other = None):
-        self.name = ''
         try:
             self.Avatar_initialized
             return
@@ -41,6 +40,7 @@ class Avatar(Actor, ShadowCaster):
 
         Actor.__init__(self, None, None, other, flattenable=0, setFinal=1)
         ShadowCaster.__init__(self)
+        self.name = ''
         self.__font = OTPGlobals.getInterfaceFont()
         self.soundChatBubble = None
         self.avatarType = ''

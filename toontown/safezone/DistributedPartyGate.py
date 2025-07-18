@@ -1,4 +1,4 @@
-from pandac.PandaModules import Point3, CollisionSphere, CollisionNode, BitMask32, Vec3, NodePath, TextNode, Vec4
+from panda3d.core import Point3, CollisionSphere, CollisionNode, BitMask32, Vec3, NodePath, TextNode, Vec4
 from otp.otpbase import OTPGlobals
 from otp.otpbase import OTPLocalizer
 from direct.interval.IntervalGlobal import Sequence, Parallel, SoundInterval
@@ -32,7 +32,7 @@ class DistributedPartyGate(DistributedObject.DistributedObject):
                 si = '0%d' % i
             else:
                 si = '%d' % i
-            self.clockSounds.append(base.loadSfx('phase_4/audio/sfx/clock%s.ogg' % si))
+            self.clockSounds.append(base.loader.loadSfx('phase_4/audio/sfx/clock%s.ogg' % si))
 
     def generate(self):
         DistributedObject.DistributedObject.generate(self)

@@ -1,4 +1,4 @@
-from pandac.PandaModules import NodePath, Point3
+from panda3d.core import NodePath, Point3
 from direct.interval.MetaInterval import Parallel, Sequence
 from direct.interval.SoundInterval import SoundInterval
 from direct.interval.FunctionInterval import Wait, Func
@@ -15,8 +15,8 @@ class CogdoGameExit(NodePath):
         self._model.reparentTo(self)
         self._leftDoor = self._model.find('**/left_door')
         self._rightDoor = self._model.find('**/right_door')
-        self._openSfx = openSfx or base.loadSfx('phase_9/audio/sfx/CHQ_VP_door_open.ogg')
-        self._closeSfx = closeSfx or base.loadSfx('phase_9/audio/sfx/CHQ_VP_door_close.ogg')
+        self._openSfx = openSfx or base.loader.loadSfx('phase_9/audio/sfx/CHQ_VP_door_open.ogg')
+        self._closeSfx = closeSfx or base.loader.loadSfx('phase_9/audio/sfx/CHQ_VP_door_close.ogg')
         self._elevatorPoints = []
         for point in ElevatorConstants.ElevatorPoints:
             self._elevatorPoints.append(point[0])

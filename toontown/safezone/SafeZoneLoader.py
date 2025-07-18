@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.toonbase.ToonBaseGlobal import *
 from toontown.distributed.ToontownMsgTypes import *
 from toontown.hood import ZoneUtil
@@ -38,8 +38,8 @@ class SafeZoneLoader(StateData.StateData):
         return
 
     def load(self):
-        self.music = base.loadMusic(self.musicFile)
-        self.activityMusic = base.loadMusic(self.activityMusicFile)
+        self.music = base.loader.loadMusic(self.musicFile)
+        self.activityMusic = base.loader.loadMusic(self.activityMusicFile)
         self.createSafeZone(self.dnaFile)
         self.parentFSMState.addChild(self.fsm)
 

@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.distributed.ClockDelta import *
 from direct.task.Task import Task
 from direct.interval.IntervalGlobal import *
@@ -15,7 +15,7 @@ from direct.fsm import StateData
 from toontown.distributed import DelayDelete
 from toontown.toonbase.ToontownTimer import ToontownTimer
 from toontown.toonbase import ToontownGlobals
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from otp.otpbase import OTPGlobals
 
 class DistributedPicnicTable(DistributedNode.DistributedNode):
@@ -57,8 +57,8 @@ class DistributedPicnicTable(DistributedNode.DistributedNode):
          None,
          None]
         self.haveAnimated = []
-        self.winSound = base.loadSfx('phase_6/audio/sfx/KART_Applause_1.ogg')
-        self.happyDance = base.loadSfx('phase_5/audio/sfx/AA_heal_happydance.ogg')
+        self.winSound = base.loader.loadSfx('phase_6/audio/sfx/KART_Applause_1.ogg')
+        self.happyDance = base.loader.loadSfx('phase_5/audio/sfx/AA_heal_happydance.ogg')
         self.accept('stoppedAsleep', self.handleSleep)
         base.localAvatar.startSleepWatch(self.handleSleep)
         self.__toonTracks = {}

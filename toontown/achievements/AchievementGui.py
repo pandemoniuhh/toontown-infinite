@@ -3,7 +3,7 @@ from direct.interval.IntervalGlobal import *
 from direct.interval.LerpInterval import *
 from toontown.toonbase import ToontownGlobals
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
 
 class AchievementGui():
     

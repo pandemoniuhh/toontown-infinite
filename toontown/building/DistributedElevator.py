@@ -1,9 +1,9 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.distributed.ClockDelta import *
 from direct.interval.IntervalGlobal import *
 from ElevatorConstants import *
 from ElevatorUtils import *
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from direct.directnotify import DirectNotifyGlobal
 from direct.fsm import ClassicFSM, State
 from direct.distributed import DistributedObject
@@ -26,9 +26,9 @@ class DistributedElevator(DistributedObject.DistributedObject):
         self.deferredSlots = []
         self.localToonOnBoard = 0
         self.boardedAvIds = {}
-        self.openSfx = base.loadSfx('phase_5/audio/sfx/elevator_door_open.ogg')
+        self.openSfx = base.loader.loadSfx('phase_5/audio/sfx/elevator_door_open.ogg')
         self.finalOpenSfx = None
-        self.closeSfx = base.loadSfx('phase_5/audio/sfx/elevator_door_close.ogg')
+        self.closeSfx = base.loader.loadSfx('phase_5/audio/sfx/elevator_door_close.ogg')
         self.elevatorFSM = None
         self.finalCloseSfx = None
         self.elevatorPoints = ElevatorPoints

@@ -3,7 +3,7 @@ from direct.directnotify import DirectNotifyGlobal
 from direct.fsm import ClassicFSM, State
 from direct.fsm import State
 from direct.fsm import StateData
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.hood import QuietZoneState
 from toontown.hood import ZoneUtil
 from toontown.suit import Suit
@@ -29,8 +29,8 @@ class CogHQLoader(StateData.StateData):
 
     def load(self, zoneId):
         self.parentFSMState.addChild(self.fsm)
-        self.music = base.loadMusic(self.musicFile)
-        self.battleMusic = base.loadMusic('phase_9/audio/bgm/encntr_suit_winning.ogg')
+        self.music = base.loader.loadMusic(self.musicFile)
+        self.battleMusic = base.loader.loadMusic('phase_9/audio/bgm/encntr_suit_winning.ogg')
         self.townBattle = TownBattle.TownBattle(self.townBattleDoneEvent)
         self.townBattle.load()
         Suit.loadSuits(3)

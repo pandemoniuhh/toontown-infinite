@@ -1,7 +1,7 @@
 from toontown.toonbase import ToontownGlobals
 from direct.directnotify import DirectNotifyGlobal
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
 from toontown.toonbase import TTLocalizer
 import GenusPanel
 import FishGlobals
@@ -10,9 +10,9 @@ class FishBrowser(DirectScrolledList):
     notify = DirectNotifyGlobal.directNotify.newCategory('FishBrowser')
 
     def __init__(self, parent = aspect2d, **kw):
-        self.parent = parent
+        self._parent = parent
         gui = loader.loadModel('phase_3.5/models/gui/friendslist_gui')
-        optiondefs = (('parent', self.parent, None),
+        optiondefs = (('parent', self._parent, None),
          ('relief', None, None),
          ('incButton_image', (gui.find('**/FndsLst_ScrollUp'),
            gui.find('**/FndsLst_ScrollDN'),
@@ -43,14 +43,14 @@ class FishBrowser(DirectScrolledList):
 
     def destroy(self):
         DirectScrolledList.destroy(self)
-        self.parent = None
+        self._parent = None
         return
 
     def update(self):
         pass
 
     def show(self):
-        if not self.parent.isHidden():
+        if not self._parentisHidden():
             self['items'][self.index].show()
             DirectScrolledList.show(self)
 

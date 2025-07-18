@@ -1,4 +1,4 @@
-from pandac.PandaModules import TextNode
+from panda3d.core import TextNode
 from direct.gui.DirectGui import DirectFrame
 from direct.gui.DirectGui import DirectButton
 from direct.gui.DirectGui import DirectLabel
@@ -38,8 +38,8 @@ class JellybeanRewardGui(DirectFrame):
          publicPartyGui.find('**/startButton_inactive')), geom_pos=(-0.39, 0.0, 0.125), command=self._close)
         publicPartyGui.removeNode()
         del publicPartyGui
-        self.countSound = base.loadSfx('phase_13/audio/sfx/tick_counter_short.ogg')
-        self.overMaxSound = base.loadSfx('phase_13/audio/sfx/tick_counter_overflow.ogg')
+        self.countSound = base.loader.loadSfx('phase_13/audio/sfx/tick_counter_short.ogg')
+        self.overMaxSound = base.loader.loadSfx('phase_13/audio/sfx/tick_counter_overflow.ogg')
         return
 
     def showReward(self, earnedAmount, jarAmount, message):

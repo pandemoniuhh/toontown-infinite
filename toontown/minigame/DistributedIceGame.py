@@ -1,5 +1,5 @@
 import math
-from pandac.PandaModules import Vec3, deg2Rad, Point3, NodePath, VBase4, CollisionHandlerEvent, CollisionNode, CollisionSphere
+from panda3d.core import Vec3, deg2Rad, Point3, NodePath, VBase4, CollisionHandlerEvent, CollisionNode, CollisionSphere
 from direct.fsm import ClassicFSM, State
 from direct.distributed.ClockDelta import globalClockDelta
 from direct.gui.DirectGui import DirectLabel
@@ -113,7 +113,7 @@ class DistributedIceGame(DistributedMinigame.DistributedMinigame, DistributedIce
     def load(self):
         self.notify.debug('load')
         DistributedMinigame.DistributedMinigame.load(self)
-        self.music = base.loadMusic('phase_4/audio/bgm/MG_IceGame.ogg')
+        self.music = base.loader.loadMusic('phase_4/audio/bgm/MG_IceGame.ogg')
         self.gameBoard = loader.loadModel('phase_4/models/minigames/ice_game_icerink')
         background = loader.loadModel('phase_4/models/minigames/ice_game_2d')
         backgroundWide = loader.loadModel('phase_4/models/minigames/iceslide_ground')

@@ -1,8 +1,8 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 from CMover import CMover
 from direct.directnotify import DirectNotifyGlobal
 from otp.movement.PyVec3 import PyVec3
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 import __builtin__
 
 class Mover:

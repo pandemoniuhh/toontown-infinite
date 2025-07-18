@@ -1,5 +1,5 @@
 from direct.directnotify import DirectNotifyGlobal
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.interval.IntervalGlobal import *
 from toontown.fishing import FishGlobals
 import GardenGlobals
@@ -15,7 +15,7 @@ class DirectRegion(NodePath):
 
     def destroy(self):
         self.unload()
-        self.parent = None
+        self._parent = None
         return
 
     def setBounds(self, *bounds):
@@ -100,7 +100,7 @@ class SpecialsPhoto(NodePath):
         self.type = None
         del self.soundTrack
         del self.track
-        self.parent = None
+        self._parent = None
         return
 
     def update(self, type):

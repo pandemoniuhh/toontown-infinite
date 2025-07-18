@@ -4,9 +4,9 @@ from toontown.toonbase import ToontownGlobals
 from toontown.toonbase import TTLocalizer
 from toontown.toon import ToonDNA
 import random, types
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
 
 class CatalogAccessoryItem(CatalogItem.CatalogItem):
 

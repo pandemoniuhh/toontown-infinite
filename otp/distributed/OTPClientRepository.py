@@ -10,13 +10,14 @@ from direct.gui.DirectGui import *
 from direct.interval.IntervalGlobal import ivalMgr
 from direct.showbase import LeakDetectors
 from direct.showbase import MessengerLeakDetector
-from direct.showbase import PythonUtil, GarbageReport, BulletinBoardWatcher
+from toontown.util import PythonUtil
+from direct.showbase import GarbageReport, BulletinBoardWatcher
 from direct.showbase.ContainerLeakDetector import ContainerLeakDetector
 from direct.showbase.GarbageReportScheduler import GarbageReportScheduler
 from direct.task import Task
 import gc
 import os
-from pandac.PandaModules import *
+from panda3d.core import *
 import random
 import string
 import sys
@@ -558,7 +559,7 @@ class OTPClientRepository(ClientRepositoryBase):
         whisper = WhisperPopup(message, OTPGlobals.getInterfaceFont(), WTSystem)
         whisper.manage(base.marginManager)
         if not self.systemMessageSfx:
-            self.systemMessageSfx = base.loadSfx('phase_3/audio/sfx/clock03.ogg')
+            self.systemMessageSfx = base.loader.loadSfx('phase_3/audio/sfx/clock03.ogg')
         if self.systemMessageSfx:
             base.playSfx(self.systemMessageSfx)
 

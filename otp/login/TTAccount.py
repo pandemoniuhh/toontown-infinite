@@ -1,7 +1,7 @@
-from pandac.PandaModules import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.core import *
 from direct.directnotify import DirectNotifyGlobal
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from otp.otpbase import OTPLocalizer
 import HTTPUtil
 import RemoteValueSet

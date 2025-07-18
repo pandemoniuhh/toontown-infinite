@@ -1,11 +1,11 @@
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
 from direct.interval.IntervalGlobal import *
 from direct.distributed.ClockDelta import *
 from direct.fsm import FSM
 from direct.distributed import DistributedObject
 from direct.showutil import Rope
-from direct.showbase import PythonUtil
+from toontown.util import PythonUtil
 from direct.task import Task
 from toontown.toonbase import ToontownGlobals
 from otp.otpbase import OTPGlobals
@@ -93,11 +93,11 @@ class DistributedLawbotChair(DistributedObject.DistributedObject, FSM.FSM):
 
     def loadSounds(self):
         if self.propInSound == None:
-            self.propInSound = base.loadSfx('phase_5/audio/sfx/ENC_propeller_in.ogg')
+            self.propInSound = base.loader.loadSfx('phase_5/audio/sfx/ENC_propeller_in.ogg')
         if self.propOutSound == None:
-            self.propOutSound = base.loadSfx('phase_5/audio/sfx/ENC_propeller_out.ogg')
+            self.propOutSound = base.loader.loadSfx('phase_5/audio/sfx/ENC_propeller_out.ogg')
         if self.cogJurorSound == None:
-            self.cogJurorSound = base.loadSfx('phase_11/audio/sfx/LB_cog_jury.ogg')
+            self.cogJurorSound = base.loader.loadSfx('phase_11/audio/sfx/LB_cog_jury.ogg')
         return
 
     def unloadSounds(self):
