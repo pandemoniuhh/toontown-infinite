@@ -19,8 +19,8 @@ class MovingPlatform(DirectObject.DirectObject, NodePath):
         if type(parentToken) == types.IntType:
             parentToken = ToontownGlobals.SPDynamic + parentToken
         self.parentToken = parentToken
-        self.name = 'MovingPlatform-%s' % parentToken
-        self.assign(hidden.attachNewNode(self.name))
+        self._name = 'MovingPlatform-%s' % parentToken
+        self.assign(hidden.attachNewNode(self._name))
         self.model = model.copyTo(self)
         self.ownsModel = 1
         floorList = self.model.findAllMatches('**/%s' % floorNodeName)
