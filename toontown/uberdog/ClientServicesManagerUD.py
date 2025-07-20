@@ -53,13 +53,9 @@ def executeHttpRequest(url, **extras):
         return None
 
 
-blacklist = executeHttpRequest('names/blacklist.json')
-
-if blacklist:
-    try:
-        blacklist = json.loads(blacklist)
-    except ValueError:
-        pass
+# blacklist = executeHttpRequest('names/blacklist.json')
+# if blacklist:
+#    blacklist = json.loads(blacklist)
 
 
 def judgeName(name):
