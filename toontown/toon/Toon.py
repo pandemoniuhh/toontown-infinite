@@ -4,6 +4,7 @@ from direct.interval.IntervalGlobal import *
 from toontown.util.PythonUtil import Functor
 from direct.task.Task import Task
 from panda3d.core import *
+from panda3d.direct import *
 import random
 import types
 
